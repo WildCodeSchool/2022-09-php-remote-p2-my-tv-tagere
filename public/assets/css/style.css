@@ -1,3 +1,8 @@
+@import url(_global.css);
+@import url(_variables.css);
+@import url(_TVshows.css);
+
 body {
     color: #f76c6c;
 }
+
