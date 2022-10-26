@@ -13,4 +13,8 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'register' => ['RegisterFormController', 'displayRegister',],
+    'register/adduser' => ['RegisterFormController', 'addUser',],
+    'connexion' => ['ConnexionController', 'displayConnexion',],
+    'connexion/submit' => ['ConnexionController', 'getRegister',],
 ];
