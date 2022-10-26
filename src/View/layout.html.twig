@@ -16,37 +16,15 @@
 </head>
 
 <body>
-    {% block content %}<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-danger">
-	<a class="navbar-brand" href="#">My tv-tagère</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-		<ul class="navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">About</a>
-			</li>
-			<div class="dropdown">
-				<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-					Recherche
-				</button>
-				<form class="dropdown-menu p-4 dropdown-menu-end ">
-					<div class="mb-3">
-						<label for="recherche" class="form-label">Recherche</label>
-						<input type="text" class="form-control" id="recherche">
-					</div>
-					<button type="submit" class="btn btn-danger">Envoyer</button>
-				</form>
-			</div>
-		</ul>
-	</div>
-</nav>{% endblock %}
-    {% block javascript %}  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+
+	{% include 'Include/_navbar.html.twig' %}
+
+    {% block content %}{% endblock %}
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>{% endblock %}
+    crossorigin="anonymous"></script>
+    {% block javascript %}{% endblock %}
 </body>
 </html>
 
