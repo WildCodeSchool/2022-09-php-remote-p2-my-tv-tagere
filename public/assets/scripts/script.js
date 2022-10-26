@@ -1,19 +1,12 @@
-const carousel = document.querySelector(".carouselSerie");
+const carousel = document.querySelectorAll(".carousel-items");
 
-carousel.addEventListener("wheel", (event) => {
 
-    event.preventDefault();
-    //console.log(event.deltaY);
-    /*
-    carousel.scrollBy({
-        top:0,
-        left: event.deltaY,
-        behavior: 'smooth',
-    });
-    */
 
-   console.log(event.deltaY)
-   carousel.scrollLeft += event.deltaY;
-});
+for (let i = 0; i < carousel.length; i++) {
+    carousel[i].addEventListener("wheel", (event) => {
+        event.preventDefault();
+        console.log(event.deltaY)
+        carousel[i].scrollLeft += event.deltaY;
+    })
+};
 
-//prompt("badaboum");
