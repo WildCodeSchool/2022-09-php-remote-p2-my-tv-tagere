@@ -31,19 +31,32 @@ li.carousel-item {
     min-width: clamp(30rem, 35vw, 35rem);
 }
 
+li.carousel-item:hover {
+    filter: drop-shadow(5px 5px 10px grey);
+    transform: translateY(-2rem);
+    transition: .3s ease-in-out;
+    width: 30rem;
+}
+
 
 img {
     width: 100%;
+    height: auto;
     object-fit: cover;
     object-position: center center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 .card-content {
     background-image: linear-gradient(0deg, #ecd4d8, #fadfe4);
+    margin-top: -6px;
     padding: 0.5rem;
     display: flex;
     justify-content: space-around;
     color: #fff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .card-content .button,
@@ -53,7 +66,7 @@ img {
     padding: .3rem;
 }
 
-.card .h3 {
+.h3 {
     color: #fff;
 }
 
