@@ -9,4 +9,3 @@ for (let i = 0; i < carousel.length; i++) {
         carousel[i].scrollLeft += event.deltaY;
     })
 };
-

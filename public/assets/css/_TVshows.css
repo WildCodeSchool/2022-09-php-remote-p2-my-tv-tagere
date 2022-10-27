@@ -21,6 +21,8 @@ header.TVshowsHeader {
 ul.carousel-items {
     display: flex;
     overflow-x: scroll;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 li.carousel-item {
@@ -28,20 +30,25 @@ li.carousel-item {
     border-radius: 25px;
     margin-left: 1rem;
     list-style-type: none;
-    min-width: clamp(30rem, 35vw, 35rem);
+    min-width: 90vw;
 }
 
-li.carousel-item:hover {
-    filter: drop-shadow(5px 5px 10px grey);
-    transform: translateY(-2rem);
-    transition: .3s ease-in-out;
-    width: 30rem;
+@media screen and (min-width: 768px) {
+    li.carousel-item {
+        min-width: clamp(18rem, 40vw, 25rem);
+    }
+
+    li.carousel-item:hover {
+        filter: drop-shadow(5px 5px 10px grey);
+        transform: translateY(-1rem);
+        transition: .3s ease-in-out;
+    }
 }
 
 
 img {
     width: 100%;
-    height: auto;
+    height: 90%;
     object-fit: cover;
     object-position: center center;
     border-top-left-radius: 25px;
