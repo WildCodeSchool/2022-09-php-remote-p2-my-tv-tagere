@@ -23,6 +23,7 @@ ul.carousel-items {
     overflow-x: scroll;
     padding-top: 1rem;
     padding-bottom: 2rem;
+    height: 15rem;
 }
 
 li.carousel-item {
@@ -30,21 +31,32 @@ li.carousel-item {
     border-radius: 25px;
     margin-left: 1rem;
     list-style-type: none;
-    min-width: 90vw;
+    min-width: 85vw;
 }
 
+
+
 @media screen and (min-width: 768px) {
-    li.carousel-item {
-        min-width: clamp(18rem, 40vw, 25rem);
+
+    ul.carousel-items {
+        height: 20rem;
     }
+
+
+    li.carousel-item {
+        min-width: 28vw;
+        max-width: 27rem;
+        transition: .3s ease-in-out;
+    }
+
 
     li.carousel-item:hover {
         filter: drop-shadow(5px 5px 10px grey);
         transform: translateY(-1rem);
         transition: .3s ease-in-out;
+
     }
 }
-
 
 img {
     width: 100%;
@@ -55,21 +67,22 @@ img {
     border-top-right-radius: 25px;
 }
 
+
 .card-content {
-    background-image: linear-gradient(0deg, #ecd4d8, #fadfe4);
-    margin-top: -6px;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: space-around;
+    background-color: #3B0208;
+    text-align: center;
     color: #fff;
+    padding: .6rem;
+    margin-top: -6px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
 
+
 .card-content .button,
 .card-content .a {
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid #F5F5F5;
+    color: #F5F5F5;
     padding: .3rem;
 }
 
