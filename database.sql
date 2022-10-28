@@ -1,7 +1,3 @@
-CREATE DATABASE my_tv_tagere;
-
-/*USE my_tv_tagere*/
-
 CREATE TABLE user (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   lastname VARCHAR(80),

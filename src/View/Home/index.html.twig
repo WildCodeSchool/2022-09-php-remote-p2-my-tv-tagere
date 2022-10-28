@@ -1,4 +1,79 @@
 {% extends 'layout.html.twig' %}
 
+{% block header %}
+	{% include '/Include/_home_header.html.twig'%}
+{% endblock %}
+
 {% block content %}
+	<main>
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-12 ">
+					<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="https://via.placeholder.com/1400x600.png" class="d-block w-60 img-fluid" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="https://via.placeholder.com/1400x600.png" class="d-block w-60 img-fluid" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="https://via.placeholder.com/1400x600.png" class="d-block w-60 img-fluid" alt="...">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<section class="container mt-3">
+
+		<div class="row justify-content-space-around">
+
+			<div class="col-lg-8 col-md-10 col-sm-12 ms-auto me-auto">
+
+				<article>
+					<h2 class="text-center">Bienvenue sur my-TVtagère !!!</h2>
+
+					<p class="text-center">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique esse soluta quibusdam assumenda nisi!
+									 Maiores, alias natus quidem neque, quos quaerat ratione unde perspiciatis a atque, deserunt et optio!</p>
+
+
+					<p class="text-center">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique esse soluta quibusdam assumenda nisi!
+									 Maiores, alias natus quidem neque, quos quaerat ratione unde perspiciatis a atque, deserunt et optio!</p>
+
+
+					<p class="text-center">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique esse soluta quibusdam assumenda nisi!
+									 Maiores, alias natus quidem neque, quos quaerat ratione unde perspiciatis a atque, deserunt et optio!</p>
+
+
+					<p class="text-center">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique esse soluta quibusdam assumenda nisi!
+									 Maiores, alias natus quidem neque, quos quaerat ratione unde perspiciatis a atque, deserunt et optio!</p>
+
+
+				</article>
+			</div>
+		</div>
+	</section>
+
 {% endblock %}
