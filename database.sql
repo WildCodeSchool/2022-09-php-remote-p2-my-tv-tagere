@@ -50,7 +50,7 @@ CREATE TABLE user_serie (
 );
 
 INSERT INTO user_serie (`user_id`,`serie_id`,`nb_of_seen_seasons`)
-VALUES (1,1,1,2);
+VALUES (1,1,2);
 
 
 CREATE TABLE serie_style_tag (
