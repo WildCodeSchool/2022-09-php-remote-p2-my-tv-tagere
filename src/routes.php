@@ -14,5 +14,8 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'series' => ['SerieController', 'index',],
-
+    'register' => ['RegisterFormController', 'displayRegister',],
+    'register/adduser' => ['RegisterFormController', 'addUser',],
+    'connexion' => ['ConnexionController', 'displayConnexion',],
+    'connexion/submit' => ['ConnexionController', 'getRegister',],
 ];
