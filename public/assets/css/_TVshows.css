@@ -1,0 +1,112 @@
+header.TVshowsHeader {
+    width: 100%;
+    height: 10rem;
+    background-image: url("../images/ban3.png");
+    background-size: cover;
+    background-position-y: center;
+
+}
+
+.TVshows h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+.TVshows h2 {
+    margin-top: 1rem;
+}
+
+/* Carousel*/
+
+ul.carousel-items {
+    display: flex;
+    overflow: scroll;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+    height: 15rem;
+}
+
+li.carousel-item {
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    margin-left: 1rem;
+    list-style-type: none;
+    min-width: 85vw;
+    overflow: auto
+}
+
+@media screen and (min-width: 768px) {
+
+    ul.carousel-items {
+        height: 20rem;
+    }
+
+
+    li.carousel-item {
+        min-width: 45vw;
+        transition: .3s ease-in-out;
+    }
+
+
+    li.carousel-item:hover {
+        filter: drop-shadow(5px 5px 10px grey);
+        transform: translateY(-1rem);
+        transition: .3s ease-in-out;
+
+    }
+}
+
+@media screen and (min-width: 960px) {
+    li.carousel-item {
+        min-width: 28vw;
+    }
+}
+
+img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+.card-content {
+    align-items: center;
+    background-color: #3B0208;
+    text-align: center;
+    color: #fff;
+    margin: -4px;
+    height: 20%;
+    padding: 1rem;
+}
+
+
+.card-content .button,
+.card-content .a {
+    border: 1px solid #F5F5F5;
+    color: #F5F5F5;
+    padding: .3rem;
+}
+
+.h3 {
+    color: #fff;
+}
+
+
+
+::-webkit-scrollbar-track {
+    display: none;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    height: 0.5rem;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+    background-color: #3d4852;
+    border-radius: 3px;
+}

@@ -1,4 +1,4 @@
+@import "_global.css";
+@import "_variables.css";
+@import "_TVshows.css";
 @import "_navbar.css"
-body {
-    color: #f76c6c;
-}
