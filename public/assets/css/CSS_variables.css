@@ -1,0 +1,9 @@
+:root{
+    --main-color:#6B040F;
+
+    /* Couleur de texte sur fond foncé */
+    --font-color:#FFFAE8;
+
+    /* Couleur de texte sur fond clair */
+    --font-color:#292929;
+}

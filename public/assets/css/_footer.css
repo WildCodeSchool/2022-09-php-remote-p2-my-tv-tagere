@@ -1,0 +1,21 @@
+.container-fluid {
+    padding: 0;
+}
+
+
+/* Cosmétique Footer */
+footer{
+    background-color: #B2B2B2;
+    box-shadow:0 0 65px #797979 inset, 0 0 20px #9c9c9c inset, 0 0 5px #000000;
+    padding-top: 0.5rem;
+    border-top-left-radius: 50% 70%;
+    border-top-right-radius: 50% 70%;
+}
+
+  /* Underline Déco */
+  h6:hover{
+    text-decoration:  wavy underline ;
+  }
+
+  
+
