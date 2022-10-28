@@ -13,7 +13,7 @@ header.TVshowsHeader {
 }
 
 .TVshows h2 {
-    margin-top: 1rem;
+    margin: 1rem 0 0 1rem;
 }
 
 /* Carousel*/
@@ -21,14 +21,13 @@ header.TVshowsHeader {
 .TVshows ul.carousel-series {
     display: flex;
     overflow: scroll;
-    padding-top: 1rem;
-    margin-bottom: 2rem;
+    padding: 1rem 0 0;
     height: 15rem;
 }
 
 .TVshows li.carousel-serie {
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 25px;
+    border-radius: 12px;
     margin-left: 1rem;
     list-style-type: none;
     min-width: 85vw;
