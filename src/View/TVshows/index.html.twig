@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Bienvenue sur votre annuraire des séries !
+{% block title %}Bienvenue sur votre annuaire des séries !
 {% endblock %}
 
 
@@ -17,7 +17,7 @@
 
 				{% for serie in series %}
 					<li class="carousel-serie">
-						<a href="/serie?id={{serie.id}}">
+						<a href="/seriepage?id={{serie.id}}">
 							<img src="/assets/images/{{serie.image}}"/>
 						</a>
 						<div class="card-content">
@@ -41,7 +41,7 @@
 					</div>
 				</li>
 				<li class="carousel-serie">
-					<a href="/serie?id=">
+					<a href="/seriepage?id=">
 						<img src="https://placeimg.com/572/300/animals"/>
 					</a>
 					<div class="card-content">
@@ -51,7 +51,7 @@
 
 
 				<li class="carousel-serie">
-					<a href="/serie?id=">
+					<a href="/seriepage?id=">
 						<img src="https://placeimg.com/572/300/animals"/>
 					</a>
 					<div class="card-content"></div>
@@ -59,7 +59,7 @@
 
 
 				<li class="carousel-serie">
-					<a href="/serie?id=">
+					<a href="/seriepage?id=">
 						<img src="https://placeimg.com/572/300/animals"/>
 					</a>
 					<div class="card-content">
@@ -73,7 +73,7 @@
 		<section class="carouselSerie">
 			<ul class="carousel-series">
 				<li class="carousel-serie">
-					<a href="/serie?id=">
+					<a href="/seriepage?id=">
 						<img src="https://placeimg.com/572/300/animals"/>
 					</a>
 					<div class="card-content">
@@ -81,17 +81,7 @@
 					</div>
 				</li>
 				<li class="carousel-serie">
-					<a href="/serie?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-
-
-				<li class="carousel-serie">
-					<a href="/serie?id=">
+					<a href="/seriepage?id=">
 						<img src="https://placeimg.com/572/300/animals"/>
 					</a>
 					<div class="card-content">
@@ -101,7 +91,17 @@
 
 
 				<li class="carousel-serie">
-					<a href="/serie?id=">
+					<a href="/seriepage?id=">
+						<img src="https://placeimg.com/572/300/animals"/>
+					</a>
+					<div class="card-content">
+						<h3 class="card-title">Ma serie</h3>
+					</div>
+				</li>
+
+
+				<li class="carousel-serie">
+					<a href="/seriepage?id=">
 						<img src="https://placeimg.com/572/300/animals"/>
 					</a>
 					<div class="card-content">
