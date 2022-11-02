@@ -18,4 +18,5 @@ return [
     'register/adduser' => ['RegisterFormController', 'addUser',],
     'connexion' => ['ConnexionController', 'displayConnexion',],
     'connexion/submit' => ['ConnexionController', 'getRegister',],
+    'series/addOrDeleteToUser' => ['UserSerieController', 'addToUser', ['id'],]
 ];

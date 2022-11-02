@@ -68,6 +68,8 @@ header.TVshowsHeader {
 }
 
 .TVshows .card-content {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #3B0208;
     text-align: center;
