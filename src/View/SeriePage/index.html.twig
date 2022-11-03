@@ -1,29 +1,35 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Détails de la série{% endblock %}
-
-
+{% block title %}Détails de la série
+{% endblock %}
 
 
 {% block content %}
-<body>
-    <main>
+	<body>
+		<main>
 
-        <h1> {{serie.title}} </h1>
-        <img src="/assets/images/{{serie.image}}" alt="">
+			<h1>
+				{{serie.title}}
+			</h1>
+			<img src="/assets/images/{{serie.image}}" alt="">
 
-        <article>
-        <h2>Synopsis</h2>
-        <p> {{serie.description}} </p>
-<br>
-        <p>Année de première diffusion : {{serie.year}}</p>
-<br>
-        <p>Nombre de saisons : {{serie.nb_of_seasons}}</p>
+			<article>
+				<h2>Synopsis</h2>
+				<p>
+					{{serie.description}}
+					<br></p>
 
-        </article>
+				<p>Année de première diffusion :
+					{{serie.year}}
+					<br></p>
 
-    </main>
+				<p>Nombre de saisons :
+					{{serie.nb_of_seasons}}</p>
 
-</body>
+			</article>
 
+		</main>
+
+	</body>
 {% endblock %}
+
