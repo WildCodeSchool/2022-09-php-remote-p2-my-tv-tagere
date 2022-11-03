@@ -14,7 +14,7 @@ class UserSerieManager extends AbstractManager
         * Add (if not already added or Delete (if already added) a Show in user list
         */
 
-        //Verifing if already in user list ?
+        //Verifing if already in user list
         $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
             " WHERE serie_id=:serieId AND user_id=:userId");
         $statement->bindValue('serieId', $serieId, \PDO::PARAM_INT);

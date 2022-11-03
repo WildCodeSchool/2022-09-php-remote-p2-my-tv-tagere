@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Model\UserSerieManager;
-use App\Model\SerieManager;
+use App\Model\StyleTagManager;
 
 class UserSerieController extends AbstractController
 {
@@ -12,8 +12,8 @@ class UserSerieController extends AbstractController
         $userSerieManager = new UserSerieManager();
         $userSerieManager->addOrDeleteToUser($serieId);
 
-        $serieManager = new SerieManager();
-        $series = $serieManager->selectAll();
-        return $this->twig->render('TVshows/index.html.twig', ['series' => $series]);
+        $styleTagManager = new StyleTagManager();
+        $seriesByTag = $styleTagManager->getFirstSeriesByTag();
+        return $this->twig->render('TVshows/index.html.twig', ['seriesByTag' => $seriesByTag]);
     }
 }
