@@ -19,4 +19,5 @@ return [
     'connexion' => ['ConnexionController', 'displayConnexion',],
     'connexion/submit' => ['ConnexionController', 'getRegister',],
     'addserie' => ['AddserieController', 'addSerie',],
+    'seriepage' => ['SeriePageController', 'index', ['id']],
 ];

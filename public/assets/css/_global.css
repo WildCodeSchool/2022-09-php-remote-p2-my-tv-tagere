@@ -2,4 +2,14 @@
     box-sizing: border-box;
     margin: 0rem;
     padding: 0rem;
+    
+}
+
+html,body{
+    min-height: 100vh;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
 }
