@@ -16,7 +16,7 @@ CREATE TABLE serie (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   `year` YEAR,
-  nb_of_seasons TINYINT,
+  nb_of_seasons INT,
   description TEXT,
   image VARCHAR(250)
 );

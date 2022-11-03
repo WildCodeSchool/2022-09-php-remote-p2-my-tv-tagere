@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<header class="TVshowsHeader"></header>
+	<main>
+		<h1 class="titleAddserie">Ajouter votre série</h1>
+		<section>
+			{% for error in errors %}
+				<section>
+					<h3 class="errorsAddserie">{{error}}</h3>
+				</section>
+			{% endfor %}
+
+			<form class="addForm" action="/addserie" method="post">
+				<div>
+					<label for="serieName">Nom série:</label><br/>
+					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example">
+				</div>
+
+				<div>
+					<label for="nbOfSeasons">Date de diffusion:</label><br/>
+					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example">
+				</div>
+				<div>
+					<label for="year">Nombre de saisons</label><br/>
+					<input class="form-control" type="text" id="year" name="year" aria-label="default input example">
+				</div>
+				<div>
+					<label for="description">Description</label><br/>
+					<textarea id="description" name="description" placeholder="Description"></textarea>
+				</div>
+
+				<label for="img">Illustration</label><br/>
+				<div class="input-group">
+					<input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+				</div>
+				<div>
+					<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Ajout"></input>
+			</div>
+		</form>
+	</section>
+</main>{% endblock %}

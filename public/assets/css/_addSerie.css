@@ -1,0 +1,25 @@
+.addForm{
+    justify-content: center;
+    max-width: 50%;
+    margin: 0 auto;
+    padding-top: 100px;
+    border: 1px solid black;
+}
+
+.inputGroupFileAddon04{
+    justify-content: flex-end;
+}
+
+.titleAddserie{
+    text-align: center;
+}
+
+.errorsAddserie{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
