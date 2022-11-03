@@ -9,24 +9,16 @@ class RegisterFormController extends AbstractController
     private RegisterManager $registerModel;
 
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->registerModel = new RegisterManager();
 
-    // Je n'arrive pas à intitialiser la paramètre du constructeur dans les méthodes ci-dessous.
-    //On me signale toujours une erreur. Pourrait on revoir çs ensemble ?
-    // Dans l'ItemController, la nouvelle lasse est initialisée dans chaque méthode, sans passer par le contruct.
-    // Je suis assez perplexe.
-
-    // public function __construct()
-    // {
-
-    //     $this->registerModel = new RegisterManager();
-
-    // }
+    }
 
 
     public function displayRegister(): string
     {
-
-        $this->registerModel = new RegisterManager();
         return $this->twig->render('FormConnect/register.html.twig');
     }
 
@@ -34,7 +26,6 @@ class RegisterFormController extends AbstractController
     public function addUser()
     {
         $errors = [];
-        $this->registerModel = new RegisterManager();
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $user = array_map('trim', $_POST);
             $user = array_map('htmlentities', $user);
