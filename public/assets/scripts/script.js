@@ -1,20 +1,15 @@
 //Ciblage des carousels
-const carousel = document.querySelectorAll(".carousel-series");
+const carousels = document.querySelectorAll(".carousel-series");
 
 //Ciblage des cards
-const lastCard = document.querySelectorAll("carousel-serie");
+const cards = document.querySelectorAll(".carousel-serie");
 
-//Flag de l'affichage si besoin
-const isDisplayedLastCard = false;
-
-
-for (let i = 0; i < carousel.length; i++) {
-    carousel[i].addEventListener("wheel", (event) => {
-        event.preventDefault();
-        console.log(event.deltaY)
-        carousel[i].scrollLeft += event.deltaY;
-    })
+for (let i = 0; i < carousels.length; i++) {
+    for (let j = (0 + (i * 4)); j < ((i * 4) + 4); j++) {
+        cards[j].addEventListener("wheel", (event) => {
+            event.preventDefault();
+            console.log(event.deltaY)
+            carousels[i].scrollLeft += event.deltaY;
+        })
+    }
 };
-
-
-
