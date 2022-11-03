@@ -7,13 +7,10 @@ use App\Model\StyleTagManager;
 
 class UserSerieController extends AbstractController
 {
-    public function addToUser(int $serieId): string
+    public function addToUser(int $serieId)
     {
         $userSerieManager = new UserSerieManager();
         $userSerieManager->addOrDeleteToUser($serieId);
-
-        $styleTagManager = new StyleTagManager();
-        $seriesByTag = $styleTagManager->getFirstSeriesByTag();
-        return $this->twig->render('TVshows/index.html.twig', ['seriesByTag' => $seriesByTag]);
+        header("Location: " . $_SERVER['HTTP_REFERER']);
     }
 }
