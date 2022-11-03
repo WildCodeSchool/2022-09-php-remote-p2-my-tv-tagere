@@ -18,6 +18,10 @@ header.TVshowsHeader {
 
 /* Carousel*/
 
+.TVshows .carouselSerie {
+    margin: 0 1.2rem;
+}
+
 .TVshows ul.carousel-series {
     display: flex;
     overflow: scroll;
@@ -31,7 +35,8 @@ header.TVshowsHeader {
     margin-left: 1rem;
     list-style-type: none;
     min-width: 85vw;
-    overflow: auto
+    overflow: auto;
+    margin: 1rem;
 }
 
 @media screen and (min-width: 768px) {
