@@ -13,7 +13,6 @@ class RegisterFormController extends AbstractController
     {
         parent::__construct();
         $this->registerModel = new RegisterManager();
-
     }
 
 

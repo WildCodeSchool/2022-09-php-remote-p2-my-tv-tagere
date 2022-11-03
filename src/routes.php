@@ -18,4 +18,5 @@ return [
     'register/adduser' => ['RegisterFormController', 'addUser',],
     'connexion' => ['ConnexionController', 'displayConnexion',],
     'connexion/submit' => ['ConnexionController', 'getRegister',],
+    'seriepage' => ['SeriePageController', 'index', ['id']],
 ];
