@@ -13,107 +13,24 @@
 	<main class="TVshows">
 		<h1>Qu'allons nous regarder aujourd'hui ?</h1>
 
-		<h2>TAG DE SERIE</h2>
-		<section class="carouselSerie">
-			<ul class="carousel-series">
-
-				{% for serie in series %}
-					<li class="carousel-serie">
-						<a href="/seriepage?id={{serie.id}}">
-							<img src="/assets/images/{{serie.image}}"/>
-						</a>
-						<div class="card-content">
-							<h3 class="card-title">{{serie.name}}</h3>
-						</div>
-					</li>
-				{% endfor %}
-
-			</ul>
-		</section>
-
-		<h2>TAG DE SERIE</h2>
-		<section class="carouselSerie">
-			<ul class="carousel-series">
-				<li class="carousel-serie">
-					<a href="/serie?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-				<li class="carousel-serie">
-					<a href="/seriepage?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-
-
-				<li class="carousel-serie">
-					<a href="/seriepage?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content"></div>
-				</li>
-
-
-				<li class="carousel-serie">
-					<a href="/seriepage?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-			</ul>
-		</section>
-
-		<h2>TAG DE SERIE</h2>
-		<section class="carouselSerie">
-			<ul class="carousel-series">
-				<li class="carousel-serie">
-					<a href="/seriepage?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-				<li class="carousel-serie">
-					<a href="/seriepage?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-
-
-				<li class="carousel-serie">
-					<a href="/seriepage?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-
-
-				<li class="carousel-serie">
-					<a href="/seriepage?id=">
-						<img src="https://placeimg.com/572/300/animals"/>
-					</a>
-					<div class="card-content">
-						<h3 class="card-title">Ma serie</h3>
-					</div>
-				</li>
-			</ul>
-		</section>
-
-
+		{% for tag in seriesByTag %}
+			<h2>{{tag.tagName}}</h2>
+			<section class="carouselSerie">
+				<ul class="carousel-series">
+					{% for serie in tag.series %}
+						<li class="carousel-serie">
+							<a href="/serie?id={{serie.id}}">
+								<img src="/assets/images/{{serie.image}}"/>
+							</a>
+							<div class="card-content">
+								<h3 class="card-title">{{serie.name}}</h3>
+								<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</section>
+		{% endfor %}	
 	</main>
 
 {% endblock %}
