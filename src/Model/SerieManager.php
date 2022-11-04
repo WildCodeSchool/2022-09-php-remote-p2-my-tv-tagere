@@ -50,12 +50,11 @@ class SerieManager extends AbstractManager
                 WHERE s.id=:cardId"
             );
             $statement->bindValue(':user_id', 1, \PDO::PARAM_INT);
-            $statement->bindValue(':cardId', $cardsId, \PDO::PARAM_STR);
+            $statement->bindValue(':cardId', $cardsId['id'], \PDO::PARAM_STR);
             $statement->execute();
 
-            $cardsId[self::TABLE] = $statement->fetchAll(\PDO::FETCH_ASSOC); //changer self::TABLE SI ça déconne
+            $cardsId[self::TABLE] = $statement->fetch(\PDO::FETCH_ASSOC); //changer self::TABLE SI ça déconne
         }
-        var_dump($cardsIds);
         return $cardsIds;
     }
 }

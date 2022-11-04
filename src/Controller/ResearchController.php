@@ -14,6 +14,7 @@ class ResearchController extends AbstractController
         if ($searchResults) {
             $searchResults = $serieManager->createCards($searchResults);
         }
+        var_dump($searchResults[0]);
         //return $this->twig->render('TVshows/index.html.twig', ['searchResults' => $searchResults]);
     }
 }
