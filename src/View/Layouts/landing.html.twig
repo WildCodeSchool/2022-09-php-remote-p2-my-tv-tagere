@@ -1,6 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-  <header> {% block header %}{% endblock %} </header>
+	{% block header %}
+		{% include '/Include/_home_header.html.twig'%}
+	{% endblock %}
 
 {% endblock %}
