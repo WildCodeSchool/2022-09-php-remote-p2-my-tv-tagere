@@ -19,5 +19,6 @@ return [
     'connexion' => ['ConnexionController', 'displayConnexion',],
     'connexion/submit' => ['ConnexionController', 'getRegister',],
     'addserie' => ['AddserieController', 'addSerie',],
+    'series/addOrDeleteToUser' => ['UserSerieController', 'addToUser', ['id']],
     'seriepage' => ['SeriePageController', 'index', ['id']],
 ];
