@@ -18,6 +18,6 @@ return [
     'register/adduser' => ['RegisterFormController', 'addUser',],
     'connexion' => ['ConnexionController', 'displayConnexion',],
     'connexion/submit' => ['ConnexionController', 'getRegister',],
-    'series/addOrDeleteToUser' => ['UserSerieController', 'addToUser', ['id'],]
-    'seriepage' => ['SeriePageController', 'index', ['id'],],
+    'series/addOrDeleteToUser' => ['UserSerieController', 'addToUser', ['id']],
+    'seriepage' => ['SeriePageController', 'index', ['id']],
 ];
