@@ -33,7 +33,7 @@ header.TVshowsHeader {
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
     border-radius: 12px;
     list-style-type: none;
-    min-width: 85vw;
+    min-width: 80vw;
     overflow: auto;
     margin: 1rem 0 1rem 0.8rem;
 }

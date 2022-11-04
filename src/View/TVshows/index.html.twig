@@ -4,12 +4,11 @@
 {% endblock %}
 
 
-{% block content %}
-
-{% include 'Include/_navbar.html.twig' %}
-
+{% block header %}
 	<header class="TVshowsHeader"></header>
+{% endblock %}
 
+{% block content %}
 	<main class="TVshows">
 		<h1>Qu'allons nous regarder aujourd'hui ?</h1>
 
@@ -19,8 +18,8 @@
 				<ul class="carousel-series">
 					{% for serie in tag.series %}
 						<li class="carousel-serie">
-							<a href="/serie?id={{serie.id}}">
-								<img src="/assets/images/{{serie.image}}"/>
+							<a href="/seriepage?id={{serie.id}}">
+								<img src="/assets/images/shows/{{serie.image}}"/>
 							</a>
 							<div class="card-content">
 								<h3 class="card-title">{{serie.name}}</h3>
@@ -30,7 +29,7 @@
 					{% endfor %}
 				</ul>
 			</section>
-		{% endfor %}	
+		{% endfor %}
 	</main>
 
 {% endblock %}
