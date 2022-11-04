@@ -1,4 +1,3 @@
-
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-danger">
 	<a class="navbar-brand" href="/series">My tv-tagère</a>
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,14 +15,16 @@
 				<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
 					Recherche
 				</button>
-				<form class="dropdown-menu p-4 dropdown-menu-end ">
+				<form action="/search" method="GET" class="dropdown-menu p-4 dropdown-menu-end ">
 					<div class="mb-3">
-						<label for="recherche" class="form-label">Recherche</label>
-						<input type="text" class="form-control" id="recherche">
+						<div class="form-group">
+							<label for="research"></label>
+							<input type="text" class="form-control" name="research"/>
+							<button type="submit" class="btn btn-primary">
+								rechercher
+							</button>
+						</div>
 					</div>
-					<button type="submit" class="btn btn-danger">Envoyer</button>
-				</form>
+				</ul>
 			</div>
-		</ul>
-	</div>
-</nav>
+		</nav>
