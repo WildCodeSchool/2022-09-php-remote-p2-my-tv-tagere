@@ -6,7 +6,7 @@
 
 {% block content %}
 
-{% include 'Include/_navbar.html.twig' %}
+	{% include 'Include/_navbar.html.twig' %}
 
 	<header class="TVshowsHeader"></header>
 
@@ -20,7 +20,7 @@
 					{% for serie in tag.series %}
 						<li class="carousel-serie">
 							<a href="/serie?id={{serie.id}}">
-								<img src="/assets/images/{{serie.image}}"/>
+								<img src="/assets/images/shows/{{serie.image}}"/>
 							</a>
 							<div class="card-content">
 								<h3 class="card-title">{{serie.name}}</h3>
@@ -30,7 +30,7 @@
 					{% endfor %}
 				</ul>
 			</section>
-		{% endfor %}	
+		{% endfor %}
 	</main>
 
 {% endblock %}
