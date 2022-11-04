@@ -61,6 +61,7 @@ CREATE TABLE serie_style_tag (
   CONSTRAINT fk_serie_style_tag2 FOREIGN KEY (style_tag_id) REFERENCES style_tag(id)
 );
 
+
 INSERT INTO serie_style_tag (`serie_id`,`style_tag_id`)
 VALUES (1,1,2),
 (2,2,1),

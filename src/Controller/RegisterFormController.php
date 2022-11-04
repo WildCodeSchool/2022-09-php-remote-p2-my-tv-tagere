@@ -9,12 +9,15 @@ class RegisterFormController extends AbstractController
     private RegisterManager $registerModel;
 
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->registerModel = new RegisterManager();
+    }
+
+
     public function displayRegister(): string
     {
-        if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-            //inscription utilisateur
-            $this->registerModel = new RegisterManager();
-        }
         return $this->twig->render('FormConnect/register.html.twig');
     }
 
@@ -22,7 +25,6 @@ class RegisterFormController extends AbstractController
     public function addUser()
     {
         $errors = [];
-        $this->registerModel = new RegisterManager();
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $user = array_map('trim', $_POST);
             $user = array_map('htmlentities', $user);
@@ -52,14 +54,8 @@ class RegisterFormController extends AbstractController
         if (empty($user['lastname']) || $user['firstname'] <= 2) {
             $errors[] = 'Votre nom de famille est obligatoire';
         }
-        if (empty($user['email'])) {
-            $errors[] = 'Votre email est obligatoire';
-        }
         if (empty($user['birthdate'])) {
             $errors[] = 'Votre date de naissance est obligatoire';
-        }
-        if (empty($user['password'])) {
-            $errors[] = 'Un mot de passe est obligatoire';
         }
         return $errors;
     }

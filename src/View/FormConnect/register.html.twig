@@ -1,8 +1,10 @@
-{% extends 'layout.html.twig' %}
+{% extends '/Layouts/landing.html.twig' %}
 
-{% block header %} {% include '/Include/_home_header.html.twig'%} {% endblock %}
+
 
 {% block content %}
+
+{% block header %} {% include '/Include/_home_header.html.twig'%} {% endblock %}
 
 {% for error in errors %}
 
@@ -29,16 +31,6 @@
 				<label for="birthdate">Votre date de naissance : </label>
 				<input type="date" name="birthdate" id="birthdate" placeholder="Votre date de naissance" required>
 			</div>
-			<div class="mb-3">
-				<label for="password">Votre mot de passe : </label>
-				<input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
-			</div>
-
-			<div class="mb-3 form-check">
-				<label class="form-check-label" for="exampleCheck1" required>J'accepte les termes d'utilisation du site</label>
-				<input type="checkbox" class="form-check-input" name="agree" id="exampleCheck1">
-			</div>
-
 			<div>
 				<input class="btn btn-success" type="submit" value="Je m'enregistre !">
 			</div>
