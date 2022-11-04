@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\RegisterManager;
-use App\Model\Connection;
 
 class RegisterFormController extends AbstractController
 {

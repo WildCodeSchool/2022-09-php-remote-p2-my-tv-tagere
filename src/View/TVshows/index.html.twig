@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Bienvenue sur votre annuraire des séries !
+{% block title %}Bienvenue sur votre annuaire des séries !
 {% endblock %}
 
 
@@ -10,6 +10,7 @@
 
 	<main class="TVshows">
 		<h1>Qu'allons nous regarder aujourd'hui ?</h1>
+
 		{% for tag in seriesByTag %}
 			<h2>{{tag.tagName}}</h2>
 			<section class="carouselSerie">
@@ -27,7 +28,7 @@
 					{% endfor %}
 				</ul>
 			</section>
-		{% endfor %}
+		{% endfor %}	
 	</main>
 
 {% endblock %}
