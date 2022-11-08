@@ -33,11 +33,19 @@ class SerieManager extends AbstractManager
     public function searchEngine(string $research): false|array
     {
         $intResearch = is_numeric($research) ? intval($research) : 0;
-        $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
-            " WHERE name LIKE :research1 OR year= :research2 LIMIT 12");
-        $statement->bindValue(':research1', "%" . $research . "%", \PDO::PARAM_STR);
-        $statement->bindValue(':research2', $intResearch, \PDO::PARAM_INT);
-        $statement->execute();
+
+        if (strlen($research) == 1) {
+            $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
+                " WHERE name LIKE :research1 LIMIT 12");
+            $statement->bindValue(':research1', $research . "%", \PDO::PARAM_STR);
+            $statement->execute();
+        } else {
+            $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
+                " WHERE name LIKE :research1 OR year= :research2 LIMIT 12");
+            $statement->bindValue(':research1', "%" . $research . "%", \PDO::PARAM_STR);
+            $statement->bindValue(':research2', $intResearch, \PDO::PARAM_INT);
+            $statement->execute();
+        }
         return $statement->fetchALL();
     }
 
@@ -53,7 +61,7 @@ class SerieManager extends AbstractManager
             $statement->bindValue(':cardId', $cardsId['id'], \PDO::PARAM_STR);
             $statement->execute();
 
-            $cardsId[self::TABLE] = $statement->fetch(\PDO::FETCH_ASSOC); //changer self::TABLE SI ça déconne
+            $cardsId['serie'] = $statement->fetch(\PDO::FETCH_ASSOC); //changer self::TABLE SI ça déconne
         }
         return $cardsIds;
     }
