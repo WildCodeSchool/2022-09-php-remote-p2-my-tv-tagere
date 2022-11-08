@@ -8,7 +8,6 @@ for (let i = 0; i < carousels.length; i++) {
     for (let j = (0 + (i * 4)); j < ((i * 4) + 4); j++) {
         cards[j].addEventListener("wheel", (event) => {
             event.preventDefault();
-            console.log(event.deltaY)
             carousels[i].scrollLeft += event.deltaY;
         })
     }

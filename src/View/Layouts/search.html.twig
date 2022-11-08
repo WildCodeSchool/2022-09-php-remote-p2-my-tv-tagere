@@ -1,10 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<main class="TVshows">
-
-
-		{{ dump(searchResults) }}
+	<main class="research">
 		<section class="carouselSerie">
 			<ul class="carousel-series">
 				{% for serie in searchResults %}
@@ -23,6 +20,4 @@
 
 	</main>
 {% endblock %}
-{% block javascript %}
-	<script src="/assets/scripts/script.js"></script>
-{% endblock %}
+{% block javascript %}{% endblock %}

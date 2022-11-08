@@ -1,3 +1,33 @@
-.navbar{
+nav{
     margin-bottom: auto;
+    opacity:1;
+    transition:.5s;
+    background: linear-gradient(#3b0202, #f81e1e); 
+    align-items: flex-end;
 }
+nav.scrolled{
+    opacity:0.5;
+}
+
+h6{
+    font-size: x-large;
+    
+}
+h6:hover{
+    text-decoration: wavy;
+}
+
+nav:hover{
+    opacity:1;
+}
+
+.navbar img{
+   object-fit: contain;
+   height: 5rem;
+   width: auto;
+   margin: 0.1rem;
+   /* padding temporaire peut être */
+   padding-bottom: 1rem;
+}
+
+
