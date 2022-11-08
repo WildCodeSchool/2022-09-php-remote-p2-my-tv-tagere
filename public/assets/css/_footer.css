@@ -1,17 +1,12 @@
-
-
-
 /* Cosmétique Footer */
-footer{
-    background: linear-gradient(#f81e1e, #3b0202); 
+footer {
+    background: rgb(232, 232, 232);
+    background: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 17.7%, rgba(255, 206, 134, 1) 64.7%, rgba(252, 176, 69, 1) 112.1%);
     margin-top: auto;
-     
+
 }
 
-  /* Underline Déco */
-  h6:hover{
-    text-decoration:  wavy underline ;
-  }
-
-  
-
+/* Underline Déco */
+h6:hover {
+    text-decoration: wavy underline;
+}
