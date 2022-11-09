@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\UserSerieManager;
-use App\Model\StyleTagManager;
 
 class UserSerieController extends AbstractController
 {

@@ -17,7 +17,7 @@ class AddserieController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $serie = array_map('trim', $_POST);
 
-            $uploadDir = '/../../public/assets/images/';
+            $uploadDir = __DIR__ . '/../../public/uploads/';
             $uploadFile = $uploadDir . basename($_FILES['image']['name']);
 
             $serie['image'] = $_FILES['image']['name'];
@@ -32,7 +32,7 @@ class AddserieController extends AbstractController
                 /*return $this->twig->render('Addserie/index.html.twig', [
                     'serie' => $serie
                 ]);*/
-                header("Location: /series");
+                // header("Location: /series");
             }
         }
         return $this->twig->render('Addserie/index.html.twig', [

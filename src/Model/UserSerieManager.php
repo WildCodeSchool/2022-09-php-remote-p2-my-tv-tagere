@@ -35,4 +35,13 @@ class UserSerieManager extends AbstractManager
             $statement->execute();
         }
     }
+
+    public function favoritesSeriesById()
+    {
+        $statement = $this->pdo->query("SELECT serie_id FROM " . self::TABLE .
+            " WHERE user_id=1");
+        $statement->execute();
+        $favSeries = $statement->fetch();
+        return $favSeries;
+    }
 }
