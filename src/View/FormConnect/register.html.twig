@@ -1,4 +1,4 @@
-{% extends '/Layouts/landing.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 
 {% block content %}
@@ -7,25 +7,30 @@
 
 		<p>{{error}}</p>
 
-	{% endfor %}
+    	{% endfor %}
 
 	<section class="container mt-3">
-		<form class="row justify-content-around" action="/register/adduser" method="post">
+		<form class="row justify-content-around" method="post">
 			<div class="col-lg-8 col-md-10 col-sm-12 ms-auto me-auto bg-light rounded-1 p-3">
-				<div class="mb-3">
-					<label for="lastname">Votre nom de famille :
-					</label>
-					<input type="text" name="lastname" id="lastname" placeholder="Votre nom de famille" required>
-				</div>
 				<div class="mb-3">
 					<label for="firstname">Votre prénom :
 					</label>
 					<input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required>
 				</div>
+                <div class="mb-3">
+					<label for="lastname">Votre nom de famille :
+					</label>
+					<input type="text" name="lastname" id="lastname" placeholder="Votre nom de famille" required>
+				</div>
 				<div class="mb-3">
 					<label for="email">Votre email :
 					</label>
 					<input type="email" name="email" id="email" placeholder="Votre email" required>
+				</div>
+                <div class="mb-3">
+					<label for="password">Votre mot de passe :
+					</label>
+					<input type="texte" name="password" id="password" placeholder="Votre mot de passe" required>
 				</div>
 				<div class="mb-3">
 					<label for="birthdate">Votre date de naissance :
@@ -38,5 +43,6 @@
 			</div>
 		</form>
 	</section>
+
 
 {% endblock %}

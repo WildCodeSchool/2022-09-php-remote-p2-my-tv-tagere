@@ -3,14 +3,15 @@ CREATE TABLE user (
   lastname VARCHAR(80),
   firstname VARCHAR(80),
   birthdate DATE,
-  email VARCHAR(255) NOT NULL
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  UNIQUE KEY `email_UNIQUE` (`email`)
 );
 
-INSERT INTO `user` (`lastname`, `firstname`, `birthdate`, `email`)
-VALUES ('Floflo', 'Florian', '1970-12-25', 'floflo.florian@serial.com'),
-('Nem', 'Emeric', '1989-08-03', 'floflo.florian@serial.com'),
-('Dupond','jean','2021-01-02','jean.dupond@tralala.com');
-
+INSERT INTO `user` (`id`, `lastname`, `firstname`, `birthdate`, `email`, `password`)
+VALUES ('1', 'Floflo', 'Florian', '1970-12-25', 'floflo.florian@serial.com', '$2y$10$4uQuqcWL64E8p0w.XtIvPOgDNqlcl7fbCCuyaSw0ZUW5lMPOeNRT.'),
+('2','Nem', 'Emeric', '1989-08-03', 'riric.fifi@serial.com', '$2y$10$Hd6KPuyV9B68VhL.ZSslWuYELv20Fe8NR0HUwzOkNJAFq0spg9lwi'),
+('3','Dupond','jean','2021-01-02','jean.dupond@tralala.com', '$2y$10$/64K0oXvMYlZhjCVPBBawevlDg4Y2uUilsd07ryeaVcVHHNgK/OGK');
 
 CREATE TABLE serie (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
