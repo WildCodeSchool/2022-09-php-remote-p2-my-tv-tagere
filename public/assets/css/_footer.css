@@ -1,9 +1,10 @@
 /* Cosmétique Footer */
 footer {
     background: rgb(232, 232, 232);
-    background: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 17.7%, rgba(255, 206, 134, 1) 64.7%, rgba(252, 176, 69, 1) 112.1%);
     margin-top: auto;
+background: linear-gradient(var(--linear-color));
 
+box-shadow: 0px 1px 25px 9px #F6CDFF;
 }
 
 /* Underline Déco */

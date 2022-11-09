@@ -13,20 +13,17 @@
 			<li class="nav-item">
 				<a class="nav-link text-white h6" href="addserie">Ajout Série</a>
 			</li>
-			<div class="dropdown">
-				<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-					Recherche
-				</button>
-				<form action="/search" method="GET" class="dropdown-menu p-4 dropdown-menu-end ">
-					<div class="mb-3">
+			<li>
+				<div class="dropdown">
+					<form class="d-flex" role="search" action="/search" method="GET">
 						<div class="form-group">
 							<label for="research"></label>
-							<input type="text" class="form-control" name="research"/>
-							<button type="submit" class="btn btn-primary">
-								rechercher
-							</button>
+							<input class="form-control me-2" name="research" type="search" placeholder="Search" aria-label="Search">
+							<button class="btn btn-outline-success" type="submit">Search</button>
 						</div>
-					</div>
-				</ul>
-			</div>
-		</nav>
+					</form>
+				</li>
+			</li>
+		</ul>
+	</div>
+</nav>

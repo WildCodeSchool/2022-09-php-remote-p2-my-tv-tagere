@@ -1,17 +1,22 @@
 :root {
     /*** Colors Variables ***/
-
     --main-color: #6B040F;
+    --second-color: #fff4cd;
+    --third-color: #292929;
 
-    /* Couleur de texte sur fond foncé */
-    --font-color: #FFFAE8;
+    /*** Font Color ***/
+    --font-color1:rgba(171, 43, 75, 0.918);
 
-    /* Couleur de texte sur fond clair */
-    --font-color: #292929;
+    /* Couleur nav ,background, footer */
+
+    --linear-color: 64.3deg, rgba(254, 122, 152, 1) 26%,
+                 rgba(255, 206, 134, 1) 70%, 
+                 rgba(252, 176, 69, 1) 112.1%;
 
 
     /*spacing variables*/
     --spacing: 8px;
     --spacing-xl: calc(var(--spacing) * 2);
-
+    --spacing-gap: 1rem;
+}
   

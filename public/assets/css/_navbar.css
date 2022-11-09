@@ -2,39 +2,47 @@ nav {
     margin-bottom: auto;
     opacity: 1;
     transition: .5s;
-    /* background: linear-gradient(217deg, #5e0404, #740202); */
-    /*     background: rgb(232, 232, 232);
-    background: linear-gradient(95deg, rgba(232, 232, 232, 1) 5%, rgba(252, 176, 69, 1) 100%); */
-    background: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 50%, rgba(252, 176, 69, 1) 112.1%);
-    align-items: flex-end;
-    padding: 0.5rem 0;
-    height: 4rem;
+    background: linear-gradient(var(--linear-color));
+    padding: 0.5rem 0.5rem;
+    height: 6rem;
+    justify-content: space-between;
 }
 
-nav.scrolled {
-    opacity: 0.7;
+ul.navbar-nav {
+    background-color:rgb(255, 255, 255, 0.5);
+    margin: 0 .5rem;
+    padding-right: 200px;
 }
+
 
 .h6 {
     font-size: x-large;
-    color: blue;
-
 }
 
-.h6:hover {
-    font-size: xx-large;
-    transition: 1s;
+@media screen and (min-width: 992px) {
+ul.navbar-nav {
+    background-color:inherit;
 }
 
+ .h6:hover {
+    color:var(--font-color1)!important;
+    transition: 0.4s;
+}
+nav.scrolled {
+    opacity: 0.7;
+}
 nav:hover {
     opacity: 1;
+}
 }
 
 .navbar img {
     object-fit: contain;
-    height: 3.8rem;
-    width: auto;
-    margin: 0.1rem;
-    /* padding temporaire peut être */
-    padding-bottom: 1rem;
+    height:100%;
+    width:auto;
 }
+
+.navbar a {
+    margin-top:-0.2rem;
+    height: 5rem;
+    }
