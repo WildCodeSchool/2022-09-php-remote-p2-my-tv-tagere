@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\Model\UserSerieManager;
+
 class SerieManager extends AbstractManager
 {
     public const TABLE = 'serie';
@@ -13,7 +15,7 @@ class SerieManager extends AbstractManager
     {
 
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
-         " (name, year, nb_of_seasons, description, image) VALUES (
+            " (name, year, nb_of_seasons, description, image) VALUES (
             :serieName, :year, :nbOfSeasons, :description, :image)");
         $statement->bindValue(':serieName', $serie['serieName'], \PDO::PARAM_STR);
         $statement->bindValue(':year', $serie['year'], \PDO::PARAM_INT);
@@ -54,6 +56,7 @@ class SerieManager extends AbstractManager
 
     public function createCards(array $cardsIds): array
     {
+
         foreach ($cardsIds as &$cardsId) {
             $statement = $this->pdo->prepare(
                 "SELECT s.name, s.image, us.id AS fav FROM " . self::TABLE . " s " .
