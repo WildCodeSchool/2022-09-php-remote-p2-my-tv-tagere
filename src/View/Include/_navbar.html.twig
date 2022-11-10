@@ -1,17 +1,19 @@
-
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-danger">
-	<a class="navbar-brand" href="/series">My tv-tagère</a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light --bs-info">
+	<a class="navbar-brand" href="/series">
+		<img src="assets/images/MY.png">
+	</a>
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 		<ul class="navbar-nav">
+
             {% if user %}
             <li class="nav-item active">
-				<a class="nav-link" href="/series">Séries</a>
+				<a class="nav-link text-white h6" href="/series">Séries</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="addserie">Ajout série</a>
+				<a class="nav-link text-white h6" href="addserie">Ajout série</a>
 			</li>
             <li class="nav-item">
 				<a class="nav-link" href="deconnexion">Déconnexion</a>
@@ -20,13 +22,17 @@
 				<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
 					Recherche
 				</button>
-				<form class="dropdown-menu p-4 dropdown-menu-end ">
+				<form action="/search" method="GET" class="dropdown-menu p-4 dropdown-menu-end ">
 					<div class="mb-3">
-						<label for="recherche" class="form-label">Recherche</label>
-						<input type="text" class="form-control" id="recherche">
+						<div class="form-group">
+							<label for="research"></label>
+							<input type="text" class="form-control" name="research"/>
+							<button type="submit" class="btn btn-primary">
+								rechercher
+							</button>
+						</div>
 					</div>
-					<button type="submit" class="btn btn-danger">Envoyer</button>
-				</form>
+				</ul>
 			</div>
             {% else %}
             <li class="nav-item">
@@ -36,7 +42,7 @@
 				<a class="nav-link" href="register">S'enregistrer</a>
 			</li>
             {% endif %}
-
 		</ul>
 	</div>
 </nav>
+

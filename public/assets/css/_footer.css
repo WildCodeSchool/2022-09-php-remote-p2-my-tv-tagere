@@ -3,12 +3,9 @@
 
 /* Cosmétique Footer */
 footer{
-    background-color: #B2B2B2;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    background: linear-gradient(#f81e1e, #3b0202); 
     margin-top: auto;
-   
-    
+     
 }
 
   /* Underline Déco */

@@ -38,7 +38,7 @@ VALUES (1,'His Dark Materials',2019,3,'Deux enfants se lancent dans une aventure
 (13, 'The Boys', 2019, 3, 'Une histoire d''action centrée sur une équipe de la CIA chargée de maintenir les super-héros en ligne, par tous les moyens nécessaires.', 'the_boys.jpg'),
 (14,'Home for Christmas',2019,2,'Johanne, éternelle célibataire, va enfin amener un petit ami dans sa famille pour Noël! Mais quand elle se fait larguer, il ne lui reste que 24 jours pour le remplacer.','home_for_christmas.jpg'),
 (15,'She-Hulk : Avocate','2023',1,'Les aventures de l''avocate Jennifer Walters, cousine de Bruce Banner, qui hérite de ses pouvoirs et devient Miss Hulk','she_hulk.jpeg'),
-(16,'Arcane','2021',1,'Raconte l''intensification des tensions entre deux villes suite à l''apparition de nouvelles inventions qui menacent de provoquer une véritable révolution.','acane.jpg');
+(16,'Arcane','2021',1,'Raconte l''intensification des tensions entre deux villes suite à l''apparition de nouvelles inventions qui menacent de provoquer une véritable révolution.','arcane.jpg');
 
 
 
