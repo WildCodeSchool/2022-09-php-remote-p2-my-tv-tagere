@@ -34,29 +34,26 @@ class RegisterFormController extends AbstractController
             if (empty($errors)) {
                 $this->registerModel->insert($user);
                 header('Location: connexion');
-            } else {
-                return $this->twig->render('FormConnect/register.html.twig', [
-                    'errors' => $errors
-                ]);
             }
-        } else {
-            return $this->twig->render('FormConnect/register.html.twig');
         }
+        return $this->twig->render('FormConnect/register.html.twig', [
+            'errors' => $errors
+        ]);
     }
 
     private function validate(array $user)
     {
         $errors = [];
-        if (empty($user['firstname']) || $user['firstname'] <= 2) {
+        if (empty($user['firstname']) || mb_strlen($user['firstname']) <= 2) {
             $errors[] = 'Votre prémon est obligatoire';
         }
-        if (empty($user['lastname']) || $user['lastname'] <= 2) {
+        if (empty($user['lastname']) || mb_strlen($user['lastname']) <= 2) {
             $errors[] = 'Votre nom de famille est obligatoire';
         }
         if (empty($user['birthdate'])) {
             $errors[] = 'Votre date de naissance est obligatoire';
         }
-        if (empty($user['email'])) {
+        if (!filter_var($user['email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Votre email est obligatoire';
         }
         if (empty($user['password'])) {
