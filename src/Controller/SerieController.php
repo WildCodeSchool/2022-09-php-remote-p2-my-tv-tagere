@@ -13,9 +13,6 @@ class SerieController extends AbstractController
     {
         $styleTagManager = new StyleTagManager();
         $seriesByTag = $styleTagManager->getFirstSeriesByTag();
-        return $this->twig->render(
-            'TVshows/index.html.twig',
-            ['seriesByTag' => $seriesByTag]
-        );
+        return $this->twig->render('TVshows/index.html.twig', ['seriesByTag' => $seriesByTag]);
     }
 }
