@@ -1,4 +1,4 @@
-{% extends '/Layouts/landing.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 
 {% block content %}
@@ -9,13 +9,13 @@
 			<a href="register">enregistrez-vous !</a>
 		</p>
 
-		<form class="row" action="connexion/submit" method="post">
+		<form class="row" method="post">
 			<div>
 				<div class=" div-two mb-3 d-flex justify-content-center">
-					<label for="mail">
+					<label for="email">
 						Votre email :
 					</label>
-					<input type="email" name="mail" id="mail" placeholder="Votre email" required>
+					<input type="email" name="email" id="email" placeholder="Votre email" required>
 				</div>
 				<div class=" div-two mb-3 d-flex justify-content-center">
 					<label for="password">Votre mot de passe :

@@ -1,7 +1,13 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light --bs-info">
-	<a class="navbar-brand" href="/series">
-		<img src="assets/images/MY.png">
-	</a>
+	{% if user %}
+		<a class="navbar-brand" href="series">
+			<img src="assets/images/MY.png">
+		</a>
+	{% else %}
+		<a class="navbar-brand" href="/">
+			<img src="assets/images/MY.png">
+		</a>
+	{% endif %}
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
