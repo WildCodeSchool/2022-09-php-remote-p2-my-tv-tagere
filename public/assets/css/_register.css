@@ -2,10 +2,10 @@ section.full-form {
     display: flex;
     max-width: 50%;
     margin: 0 auto;
-    border: 6px solid rgb(251, 211, 217);
+    border: 6px solid rgb(92, 88, 115);
     border-radius:12px;
     padding:1rem;
-    background-color: rgb(251, 211, 217, 0.4);
+    background-color: rgba(82, 80, 99, 0.4);
 
 }
 

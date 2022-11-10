@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Righteous&display=swap');
 
 * {
     box-sizing: border-box;
@@ -19,7 +19,7 @@ body {
 	background-size: 150% 150%;
 	animation: gradient 8s ease infinite;
 	height: 100vh;
-    font-family: 'Fredoka One', cursive; 
+    font-family: 'Righteous', cursive;
     color:var(--font-color1);
 }
 
