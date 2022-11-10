@@ -11,7 +11,7 @@
 				</section>
 			{% endfor %}
 
-			<form class="addForm" action="/addserie" method="post">
+			<form class="addForm" action="/addserie" method="post" enctype="multipart/form-data">
 				<div>
 					<label for="serieName">Nom série:</label><br/>
 					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example">
@@ -32,11 +32,12 @@
 
 				<label for="img">Illustration</label><br/>
 				<div class="input-group">
-					<input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+					<input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
 				</div>
 				<div>
-					<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Ajout"></input>
-			</div>
-		</form>
-	</section>
-</main>{% endblock %}
+					<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Ajout">
+				</div>
+			</form>
+		</section>
+	</main>
+{% endblock %}
