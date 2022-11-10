@@ -9,33 +9,36 @@
 
 	{% endfor %}
 
-	<section class="container mt-3">
-		<form class="row justify-content-around" action="/register/adduser" method="post">
-			<div class="col-lg-8 col-md-10 col-sm-12 ms-auto me-auto bg-light rounded-1 p-3">
-				<div class="mb-3">
-					<label for="lastname">Votre nom de famille :
-					</label>
-					<input type="text" name="lastname" id="lastname" placeholder="Votre nom de famille" required>
-				</div>
-				<div class="mb-3">
-					<label for="firstname">Votre prénom :
-					</label>
-					<input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required>
-				</div>
-				<div class="mb-3">
-					<label for="email">Votre email :
-					</label>
-					<input type="email" name="email" id="email" placeholder="Votre email" required>
-				</div>
-				<div class="mb-3">
-					<label for="birthdate">Votre date de naissance :
-					</label>
-					<input type="date" name="birthdate" id="birthdate" placeholder="Votre date de naissance" required>
-				</div>
-				<div>
-					<input class="btn btn-success" type="submit" value="Je m'enregistre !">
-				</div>
+	<section class="full-form">
+		<form action="/register/adduser" method="post">
+			<div class="divone mt-3">
+				<label for="lastname">Votre nom de famille :
+				</label>
+				<input type="text" name="lastname" id="lastname" placeholder="Votre nom de famille" required>
 			</div>
+
+			<div class="divone mt-3">
+				<label for="firstname">Votre prénom :
+				</label>
+				<input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required>
+			</div>
+
+			<div class="divone mt-3">
+				<label for="email">Votre email :
+				</label>
+				<input type="email" name="email" id="email" placeholder="Votre email" required>
+			</div>
+
+			<div class="divone mt-3">
+				<label for="birthdate">Votre date de naissance :
+				</label>
+				<input type="date" name="birthdate" id="birthdate" placeholder="Votre date de naissance" required>
+			</div>
+
+
+			<input class="btn-one mt-3 d-flex" type="submit" value="Je m'enregistre !">
+
+
 		</form>
 	</section>
 

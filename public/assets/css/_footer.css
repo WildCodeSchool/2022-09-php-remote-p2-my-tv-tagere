@@ -1,13 +1,13 @@
 /* Cosmétique Footer */
 footer {
-    background: rgb(232, 232, 232);
     margin-top: auto;
-background: linear-gradient(var(--linear-color));
-
-box-shadow: 0px 1px 25px 9px #F6CDFF;
+    background:(var(--linear-color));
 }
 
+.text-decoration-none{
+    color:var(--font-color1) !important;
+}
 /* Underline Déco */
-h6:hover {
-    text-decoration: wavy underline;
+.text-decoration-none:hover {
+    color: var(--main-color) !important;
 }

@@ -15,14 +15,31 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 17.7%, rgba(255, 206, 134, 1) 64.7%, rgba(252, 176, 69, 1) 112.1%);
+    background-image:var(--linear-color);
+	background-size: 150% 150%;
+	animation: gradient 8s ease infinite;
+	height: 100vh;
     font-family: 'Fredoka One', cursive; 
+    color:var(--font-color1);
 }
+
+@keyframes gradient {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 h1 {
     margin-top: 0;
     font-size: 2rem;
-    color: var(--main-color);
+    color: var(--font-color1);
 }
 
 h2 {

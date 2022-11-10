@@ -53,7 +53,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:var(--second-color);
+    background: linear-gradient(166deg, rgba(255,255,255,1) 0%, rgb(255, 220, 246) 100%);
     text-align: center;
     height: 20%;
     padding: 1rem;

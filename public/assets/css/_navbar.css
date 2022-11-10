@@ -2,7 +2,7 @@ nav {
     margin-bottom: auto;
     opacity: 1;
     transition: .5s;
-    background: linear-gradient(var(--linear-color));
+    background:var(--linear-color);
     padding: 0.5rem 0.5rem;
     height: 6rem;
     justify-content: space-between;
@@ -17,6 +17,7 @@ ul.navbar-nav {
 
 .h6 {
     font-size: x-large;
+    color: var(--font-color1)!important;
 }
 
 @media screen and (min-width: 992px) {
@@ -25,7 +26,7 @@ ul.navbar-nav {
 }
 
  .h6:hover {
-    color:var(--font-color1)!important;
+    color:var(--main-color)!important;
     transition: 0.4s;
 }
 nav.scrolled {

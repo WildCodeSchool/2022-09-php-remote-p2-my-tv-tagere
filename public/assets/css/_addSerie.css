@@ -3,9 +3,11 @@
     max-width: 50%;
     margin: 0 auto;
     padding-top: 100px;
-    border: 1px solid black;
+    border: 6px solid rgb(251, 211, 217);
     border-radius:12px;
     padding:1rem;
+    background-color: rgb(251, 211, 217, 0.4);
+
 }
 
 .inputGroupFileAddon04{
