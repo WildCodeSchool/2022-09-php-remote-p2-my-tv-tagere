@@ -1,15 +1,15 @@
 :root {
     /*** Colors Variables ***/
-    --main-color: #5E6B8D;
+    --main-color: rgb(224, 224, 252);
     --second-color: #fff4cd;
     --third-color: #292929;
 
     /*** Font Color ***/
-    --font-color1:#9daaca;
+    --font-color1: rgb(224, 224, 252);
 
     /* Couleur nav ,background, footer */
 
-    --linear-color: linear-gradient( 92.7deg, #1D4350  8.5%, #A43931 90.2% );
+    --linear-color: linear-gradient(92.7deg, #1D4350 8.5%, #A43931 90.2%);
 
 
     /*spacing variables*/
@@ -17,4 +17,3 @@
     --spacing-xl: calc(var(--spacing) * 2);
     --spacing-gap: 1rem;
 }
-  

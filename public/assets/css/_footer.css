@@ -1,12 +1,15 @@
 /* Cosmétique Footer */
 footer {
     margin-top: auto;
-    background:(var(--linear-color));
+    background: (var(--linear-color));
+    background-color: rgba(48, 65, 79, 0.6);
+    padding: 0.5rem;
 }
 
-.text-decoration-none{
-    color:var(--font-color1) !important;
+.text-decoration-none {
+    color: var(--font-color1) !important;
 }
+
 /* Underline Déco */
 .text-decoration-none:hover {
     color: var(--main-color) !important;

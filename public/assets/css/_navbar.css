@@ -2,48 +2,74 @@ nav {
     margin-bottom: auto;
     opacity: 1;
     transition: .5s;
-    background:var(--linear-color);
+    background: var(--linear-color);
     padding: 0.5rem 0.5rem;
     height: 6rem;
     justify-content: space-between;
 }
 
 ul.navbar-nav {
-    background-color:rgb(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255, 0.5);
     margin: 0 .5rem;
-    padding-right: 200px;
-}
-
-
-.h6 {
-    font-size: x-large;
-    color: var(--font-color1)!important;
 }
 
 @media screen and (min-width: 992px) {
-ul.navbar-nav {
-    background-color:inherit;
-}
+    ul.navbar-nav {
+        background-color: inherit;
+        padding: 1rem;
+    }
 
- .h6:hover {
-    color:var(--main-color)!important;
-    transition: 0.4s;
-}
-nav.scrolled {
-    opacity: 0.7;
-}
-nav:hover {
-    opacity: 1;
-}
+    .h6:hover {
+        color: var(--font-color1) !important;
+        transition: 0.4s;
+    }
+
+    nav.scrolled {
+        opacity: 0.7;
+    }
+
+    nav:hover {
+        opacity: 1;
+    }
 }
 
 .navbar img {
     object-fit: contain;
-    height:100%;
-    width:auto;
+    height: 80%;
+    width: auto;
+    margin-left: 1rem;
 }
 
-.navbar a {
-    margin-top:-0.2rem;
+/* .navbar a {
+    margin-top: -0.2rem;
     height: 5rem;
-    }
+} */
+
+
+/* NAV LANDING PAGE EN DESSOU*/
+
+.bootstrapachier {
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    white-space: nowrap;
+}
+
+.navregister {
+    color: var(--font-color1);
+    font-size: xx-large;
+    border-radius: 12px;
+    background: rgba(44, 88, 103, 0.7);
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+.navregister:hover {
+    transition: 0.4s;
+    background-color: rgba(44, 88, 103, 1);
+    color: var(--font-color1) !important;
+}
+
+.navbar-brand {
+    height: 100%;
+}

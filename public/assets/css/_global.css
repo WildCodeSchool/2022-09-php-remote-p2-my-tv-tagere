@@ -15,24 +15,26 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    background-image:var(--linear-color);
-	background-size: 150% 150%;
-	animation: gradient 8s ease infinite;
-	height: 100vh;
+    background-image: var(--linear-color);
+    background-size: 150% 150%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
     font-family: 'Righteous', cursive;
-    color:var(--font-color1);
+    color: var(--font-color1);
 }
 
 @keyframes gradient {
     0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
@@ -44,9 +46,9 @@ h1 {
 
 h2 {
     margin-top: 0;
-    color: var(--main-color);
+    color: var(--font-color1);
 }
 
 h3 {
-    color:var(--main-color);
+    color: var(--font-color1);
 }

@@ -32,17 +32,20 @@
 								<input class="form-control me-2" name="research" type="search" placeholder="Search" aria-label="Search">
 								<button class="btn btn-outline-success" type="submit">Search</button>
 							</div>
-						</div>
-					</form>
+						</form>
+					</div>
 				</li>
-			</div>
-		{% else %}
-			<li class="nav-item">
-				<a class="nav-link" href="connexion">Se connecter</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="register">S'enregistrer</a>
-			</li>
-		{% endif %}
-	</ul>
-</div></nav>
+
+			{% else %}
+				<div class="bootstrapachier d-flex">
+					<li class="navlanding nav-item">
+						<a class=" navregister nav-link" href="connexion">Se connecter</a>
+					</li>
+					<li class="navlanding nav-item">
+						<a class="navregister nav-link" href="register">S'enregistrer</a>
+					</li>
+				</div>
+			{% endif %}
+		</ul>
+	</div>
+</nav>
