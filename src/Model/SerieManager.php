@@ -63,7 +63,7 @@ class SerieManager extends AbstractManager
                     "LEFT JOIN user_serie us ON us.serie_id=s.id AND us.user_id=:user_id
                 WHERE s.id=:cardId"
             );
-            $statement->bindValue(':user_id', 1, \PDO::PARAM_INT);
+            $statement->bindValue(':user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
             $statement->bindValue(':cardId', $cardsId['id'], \PDO::PARAM_STR);
             $statement->execute();
 
