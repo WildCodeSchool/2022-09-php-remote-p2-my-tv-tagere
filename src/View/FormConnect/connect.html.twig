@@ -1,27 +1,45 @@
-{% extends '/Layouts/landing.html.twig' %}
+
+
+
+{% extends 'layout.html.twig' %}
 
 
 {% block content %}
 
-	<section class="container mt-3">
-		<form class="row" action="connexion/submit" method="post">
-			<div class=" col-lg-8 col-md-10 col-sm-12 ms-auto me-auto bg-light rounded-1 p-3">
-				<div class="mb-3 d-flex justify-content-center">
-					<label for="mail">
-						Votre email :
-					</label>
-					<input type="email" name="mail" id="mail" placeholder="Votre email" required>
-				</div>
-				<div class="mb-3 d-flex justify-content-center">
-					<label for="password">Votre mot de passe :
-					</label>
-					<input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
-				</div>
-				<div class="mb-3 d-flex justify-content-center">
-					<input class="btn btn-success" type="submit" value="Connexion">
-				</div>
+
+
+
+<section class="container mt-3">
+	<h1>Connectez-vous !</h1>
+	<p>Si vous avez un compte, évidement... Sinon
+		<a href="register">enregistrez-vous !</a>
+	</p>
+
+	<form class="row" method="post">
+		<div class=" col-lg-8 col-md-10 col-sm-12 ms-auto me-auto bg-light rounded-1 p-3">
+			<div class="mb-3 d-flex justify-content-center">
+				<label for="mail">
+					Votre email :
+				</label>
+				<input type="email" name="email" id="email" placeholder="Votre email" required>
 			</div>
-		</form>
-	</section>
+			<div class="mb-3 d-flex justify-content-center">
+				<label for="password">Votre mot de passe :
+				</label>
+				<input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
+			</div>
+            {% for error in errors %}
+                <div class="mb-3 d-flex justify-content-center">
+                    <p>{{error}}</p>
+                </div>
+                {% endfor %}
+			<div class="mb-3 d-flex justify-content-center">
+				<input class="btn btn-success" type="submit" value="Connexion">
+			</div>
+
+		</div>
+	</form>
+</section>
+
 
 {% endblock %}
