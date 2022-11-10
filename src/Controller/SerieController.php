@@ -9,10 +9,15 @@ class SerieController extends AbstractController
     /**
      * Display home page
      */
-    public function index(): string
+    public function index()
     {
-        $styleTagManager = new StyleTagManager();
-        $seriesByTag = $styleTagManager->getFirstSeriesByTag();
-        return $this->twig->render('TVshows/index.html.twig', ['seriesByTag' => $seriesByTag]);
+        if (!$this->user) {
+            echo "Tu n'as rien à faire là si tu n'es pas connecté";
+            header('HTTP/1.1 401 Unauthorized');
+        } else {
+            $styleTagManager = new StyleTagManager();
+            $seriesByTag = $styleTagManager->getFirstSeriesByTag();
+            return $this->twig->render('TVshows/index.html.twig', ['seriesByTag' => $seriesByTag]);
+        }
     }
 }
