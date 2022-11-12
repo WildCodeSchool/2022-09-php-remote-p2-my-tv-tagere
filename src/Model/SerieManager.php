@@ -40,9 +40,10 @@ class SerieManager extends AbstractManager
         $intResearch = is_numeric($research) ? intval($research) : 0;
 
         if (strlen($research) == 1) {
+            $regex = ".*\\b[" . strtolower($research) . strtoupper($research) . "].*";
             $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
-                " WHERE name LIKE :research1 LIMIT 12");
-            $statement->bindValue(':research1', $research . "%", \PDO::PARAM_STR);
+                " WHERE name REGEXP :research1 LIMIT 12");
+            $statement->bindValue(':research1', $regex, \PDO::PARAM_STR);
             $statement->execute();
         } else {
             $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
