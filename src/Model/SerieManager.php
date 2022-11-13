@@ -11,7 +11,7 @@ class SerieManager extends AbstractManager
     /**
      * Insert new item in database
      */
-    public function insertSerie(array $serie): void
+    public function insertSerie(array $serie): string|false
     {
 
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
@@ -23,6 +23,7 @@ class SerieManager extends AbstractManager
         $statement->bindValue(':description', $serie['description'], \PDO::PARAM_STR);
         $statement->bindValue(':image', $serie['image'], \PDO::PARAM_STR);
         $statement->execute();
+        return $this->pdo->lastInsertId();
     }
 
     public function selectOneByNameAndYear(array $serie): false|array
@@ -42,8 +43,8 @@ class SerieManager extends AbstractManager
         if (strlen($research) == 1) {
             $regex = ".*\\b[" . strtolower($research) . strtoupper($research) . "].*";
             $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
-                " WHERE name REGEXP :research1 LIMIT 12");
-            $statement->bindValue(':research1', $regex, \PDO::PARAM_STR);
+                " WHERE name REGEXP :regex LIMIT 12");
+            $statement->bindValue(':regex', $regex, \PDO::PARAM_STR);
             $statement->execute();
         } else {
             $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .

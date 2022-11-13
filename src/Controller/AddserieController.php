@@ -3,19 +3,28 @@
 namespace App\Controller;
 
 use App\Model\SerieManager;
+use App\Model\StyleTagManager;
+use App\Model\SerieStyleManager;
 
 class AddserieController extends AbstractController
 {
     private SerieManager $serieModel;
 
-
-
     public function addSerie()
     {
         $errors = [];
         $this->serieModel = new SerieManager();
+        $styleTagManager = new StyleTagManager();
+
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-            $serie = array_map('trim', $_POST);
+            $serie = $_POST;
+
+            if (isset($serie['tags'])) {
+                $styleTags = array_map('trim', $serie['tags']);
+                unset($serie['tags']);
+            }
+
+            $serie = array_map('trim', $serie);
 
             $uploadDir = __DIR__ . '/../../public/uploads/';
             $uploadFile = $uploadDir . basename($_FILES['image']['name']);
@@ -28,15 +37,21 @@ class AddserieController extends AbstractController
 
             if (empty($errors)) {
                 move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile);
-                $this->serieModel->insertSerie($serie);
-                /*return $this->twig->render('Addserie/index.html.twig', [
-                    'serie' => $serie
-                ]);*/
-                // header("Location: /series");
+                $lastSerieId = $this->serieModel->insertSerie($serie);
+                if (isset($styleTags)) {
+                    $serieStyleManager = new SerieStyleManager();
+                    foreach ($styleTags as $styleTag) {
+                        $serieStyleManager->insertTagsBySerieId(intval($styleTag), intval($lastSerieId));
+                    }
+                }
             }
         }
+
+        $styleTags = $styleTagManager->selectAll();
+
         return $this->twig->render('Addserie/index.html.twig', [
-            'errors' => $errors
+            'errors' => $errors,
+            'styleTags' => $styleTags,
         ]);
     }
 
