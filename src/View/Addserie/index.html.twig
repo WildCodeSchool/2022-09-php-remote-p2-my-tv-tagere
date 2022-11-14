@@ -2,7 +2,7 @@
 
 {% block content %}
 	<header class="TVshowsHeader"></header>
-	<main>
+	<main class="addSerie">
 		<h1 class="titleAddserie">Ajouter votre série</h1>
 		<section>
 			{% for error in errors %}
@@ -10,6 +10,11 @@
 					<h3 class="errorsAddserie">{{error}}</h3>
 				</section>
 			{% endfor %}
+			<p>Recherchez votre serie ou ajoutez la manuellement</p>
+			<input type="text" id="serieSearch" name="serieSearch" value="" required>
+			<input type="button" id="serieSearchButton" value="Recherche !" onclick="lokkingForSeries()">
+			<div class="fetchedSeries"></div>
+
 
 			<form class="addForm" action="/addserie" method="post" enctype="multipart/form-data">
 				<div>
@@ -18,11 +23,13 @@
 				</div>
 				<div>
 					<label for="nbOfSeasons">Date de diffusion:</label><br/>
-					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example" required>
+					<input class="form-control" type="text" id="year" name="year" aria-label="default input example" required>
 				</div>
 				<div>
 					<label for="year">Nombre de saisons</label><br/>
-					<input class="form-control" type="text" id="year" name="year" aria-label="default input example">
+					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example">
+
+
 				</div>
 				<div>
 					<label for="description">Description</label><br/>
@@ -46,4 +53,5 @@
 		</form>
 	</section>
 </main>{% endblock %}{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
 <script src="/assets/scripts/addScript.js"></script>{% endblock %}
