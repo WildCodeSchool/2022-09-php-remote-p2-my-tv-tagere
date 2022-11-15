@@ -24,8 +24,8 @@ function fetchSeries(serieSearch) {
                 seriesHtml += `
 						<li class="carousel-serie">
 								<img src="${serie?.show?.image?.original}"/>
-                                <div data-id="${serie.show.id}" class= "card-content" id=cardContent>
-								<h3 class="card-title">${serie.show.name}</h3>
+                                <div class= "card-content">
+								<h3 class="card-title" id=cardContent data-id="${serie.show.id}">${serie.show.name}</h3>
 							</div>
 						</li >
                 `;
