@@ -7,42 +7,50 @@
 
 		<p>{{error}}</p>
 
-    	{% endfor %}
+	{% endfor %}
+	<main class="connect">
+		<section class="container-connect">
+			<h1 class="text-center">Rejoignez-nous !</h1>
 
-	<section class="container mt-3">
-		<form class="row justify-content-around" method="post">
-			<div class="col-lg-8 col-md-10 col-sm-12 ms-auto me-auto bg-light rounded-1 p-3">
-				<div class="mb-3">
+
+			<form class="row justify-content-around" method="post">
+
+				<div class="div-two mb-3 d-flex justify-content-center">
+
 					<label for="firstname">Votre prénom :
 					</label>
 					<input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required>
 				</div>
-                <div class="mb-3">
+				<div class="div-two mb-3 d-flex justify-content-center">
+
 					<label for="lastname">Votre nom de famille :
 					</label>
 					<input type="text" name="lastname" id="lastname" placeholder="Votre nom de famille" required>
 				</div>
-				<div class="mb-3">
+				<div class="div-two mb-3 d-flex justify-content-center">
+
 					<label for="email">Votre email :
 					</label>
 					<input type="email" name="email" id="email" placeholder="Votre email" required>
 				</div>
-                <div class="mb-3">
+				<div class="div-two mb-3 d-flex justify-content-center">
+
 					<label for="password">Votre mot de passe :
 					</label>
 					<input type="texte" name="password" id="password" placeholder="Votre mot de passe" required>
 				</div>
-				<div class="mb-3">
+				<div class="div-two mb-3 d-flex justify-content-center">
+
 					<label for="birthdate">Votre date de naissance :
 					</label>
 					<input type="date" name="birthdate" id="birthdate" placeholder="Votre date de naissance" required>
 				</div>
-				<div>
-					<input class="btn btn-success" type="submit" value="Je m'enregistre !">
+				<div class="div-two mb-3 d-flex justify-content-center">
+					<input class="btn" type="submit" value="Je m'enregistre !">
 				</div>
-			</div>
-		</form>
-	</section>
+			</form>
+		</section>
+	</main>
 
 
 {% endblock %}

@@ -1,17 +1,21 @@
 :root {
     /*** Colors Variables ***/
+    --main-color: rgb(224, 224, 252);
+    --second-color: #fff4cd;
+    --third-color: #292929;
+    --button-color: rgba(44, 88, 103, 0.7);
+    --button-color-hover: rgba(44, 88, 103, 1);
 
-    --main-color: #6B040F;
+    /*** Font Color ***/
+    --font-color1: rgb(224, 224, 252);
 
-    /* Couleur de texte sur fond foncé */
-    --font-color: #FFFAE8;
+    /* Couleur nav ,background, footer */
 
-    /* Couleur de texte sur fond clair */
-    --font-color: #292929;
+    --linear-color: linear-gradient(92.7deg, #1D4350 8.5%, #A43931 90.2%);
 
 
     /*spacing variables*/
     --spacing: 8px;
     --spacing-xl: calc(var(--spacing) * 2);
-
-  
+    --spacing-gap: 1rem;
+}
