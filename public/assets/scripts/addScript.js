@@ -18,7 +18,7 @@ function fetchSeries(serieSearch) {
             return response.data;
         })
         .then(function (series) {
-            console.log(JSON.stringify(series, null, 2));
+            //console.log(JSON.stringify(series, null, 2));
             let seriesHtml = `<section class="carouselSerie">
 				<ul class="carousel-series">`;
             for (serie of series) {
@@ -62,7 +62,6 @@ function fetchOneSerie(id) {
 
 buttonSearch.addEventListener("click", function () {
     let serieSearch = document.getElementById("serieSearch").value;
-    console.log(serieSearch);
     fetchSeries(serieSearch);
 })
 
