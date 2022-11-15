@@ -9,6 +9,7 @@ function selectiveCheck(event) {
         return false;
 }
 
+const buttonSearch = document.getElementById("serieSearchButton");
 
 
 function fetchSeries(serieSearch) {
@@ -17,10 +18,10 @@ function fetchSeries(serieSearch) {
             return response.data;
         })
         .then(function (series) {
-            //console.log(JSON.stringify(series, null, 2));
+            console.log(JSON.stringify(series, null, 2));
             let seriesHtml = `<section class="carouselSerie">
 				<ul class="carousel-series">`;
-            series.forEach((serie) => {
+            for (serie of series) {
                 seriesHtml += `
 						<li class="carousel-serie">
 								<img src="${serie.show.image.original ? serie.show.image.original : " "}"/>
@@ -30,7 +31,7 @@ function fetchSeries(serieSearch) {
 							</div>
 						</li >
                 `;
-            });
+            };
 
             seriesHtml += `</ul >
 			</section > `;
@@ -59,13 +60,12 @@ function fetchOneSerie(id) {
 };
 
 
-
-
-
-function lokkingForSeries() {
+buttonSearch.addEventListener("click", function () {
     let serieSearch = document.getElementById("serieSearch").value;
+    console.log(serieSearch);
     fetchSeries(serieSearch);
-}
+})
+
 
 function completeForm(id) {
     fetchOneSerie(id);
