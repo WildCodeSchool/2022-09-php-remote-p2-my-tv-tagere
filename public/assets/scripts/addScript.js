@@ -11,7 +11,6 @@ function selectiveCheck(event) {
 
 const buttonSearch = document.getElementById("serieSearchButton");
 
-
 function fetchSeries(serieSearch) {
     axios.get(`https://api.tvmaze.com/search/shows?q=${serieSearch}`)
         .then(function (response) {
@@ -24,21 +23,30 @@ function fetchSeries(serieSearch) {
             for (serie of series) {
                 seriesHtml += `
 						<li class="carousel-serie">
-								<img src="${serie.show.image.original ? serie.show.image.original : " "}"/>
+								<img src="${serie?.show?.image?.original}"/>
                                 <div class= "card-content">
 								<h3 class="card-title">${serie.show.name}</h3>
-                                <input type="button" id="completeForm" value="add" onclick="completeForm(${serie.show.id})">
+                                <button id="completeForm" data-id="${serie.show.id}">Add</button>
 							</div>
 						</li >
                 `;
             };
-
             seriesHtml += `</ul >
 			</section > `;
-
             document.querySelector('.fetchedSeries').innerHTML = seriesHtml;
+
+            const buttonCompletes = document.querySelectorAll('#completeForm');
+            for (buttonComplete of buttonCompletes) {
+                //console.log(buttonComplete.dataset.id);
+                buttonComplete.addEventListener('mouseenter', function (event) {
+                    //console.log(event.srcElement.dataset.id);
+                    fetchOneSerie(event.srcElement.dataset.id);
+                });
+            }
         });
 };
+
+
 
 function fetchOneSerie(id) {
     axios.get(`https://api.tvmaze.com/shows/${id}`)
@@ -63,9 +71,4 @@ function fetchOneSerie(id) {
 buttonSearch.addEventListener("click", function () {
     let serieSearch = document.getElementById("serieSearch").value;
     fetchSeries(serieSearch);
-})
-
-
-function completeForm(id) {
-    fetchOneSerie(id);
-}
+});

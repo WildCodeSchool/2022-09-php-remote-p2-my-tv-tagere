@@ -80,5 +80,5 @@ main.addSerie {
 
 .addSerie .h3 {
     color: #fff;
-    font-size: x-small;
+    font-size: 1rem !important;
 }
