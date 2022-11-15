@@ -24,9 +24,8 @@ function fetchSeries(serieSearch) {
                 seriesHtml += `
 						<li class="carousel-serie">
 								<img src="${serie?.show?.image?.original}"/>
-                                <div class= "card-content">
+                                <div data-id="${serie.show.id}" class= "card-content" id=cardContent>
 								<h3 class="card-title">${serie.show.name}</h3>
-                                <button id="completeForm" data-id="${serie.show.id}">Add</button>
 							</div>
 						</li >
                 `;
@@ -35,10 +34,10 @@ function fetchSeries(serieSearch) {
 			</section > `;
             document.querySelector('.fetchedSeries').innerHTML = seriesHtml;
 
-            const buttonCompletes = document.querySelectorAll('#completeForm');
-            for (buttonComplete of buttonCompletes) {
+            const cardContents = document.querySelectorAll('#cardContent');
+            for (cardContent of cardContents) {
                 //console.log(buttonComplete.dataset.id);
-                buttonComplete.addEventListener('mouseenter', function (event) {
+                cardContent.addEventListener('mouseenter', function (event) {
                     //console.log(event.srcElement.dataset.id);
                     fetchOneSerie(event.srcElement.dataset.id);
                 });
