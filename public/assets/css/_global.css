@@ -52,3 +52,11 @@ h2 {
 h3 {
     color: var(--font-color1);
 }
+
+a {
+    color: var(--font-color1);
+}
+
+a:hover {
+    color: var(--font-color1);
+}

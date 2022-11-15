@@ -2,31 +2,32 @@
 
 
 {% block content %}
+	<main class="connect">
+		<section class="container-connect mt-3">
+			<h1 class="text-center">Connectez-vous !</h1>
 
-	<section class="container-connect mt-3">
-		<h1>Connectez-vous !</h1>
-		<p>Si vous avez un compte, évidement... Sinon
-			<a href="register">enregistrez-vous !</a>
-		</p>
+			<p>Si vous avez un compte, évidement... Sinon
+				<a href="register">enregistrez-vous !</a>
+			</p>
 
-		<form class="row" method="post">
-			<div>
-				<div class=" div-two mb-3 d-flex justify-content-center">
-					<label for="email">
-						Votre email :
-					</label>
-					<input type="email" name="email" id="email" placeholder="Votre email" required>
+			<form class="row" method="post">
+				<div>
+					<div class="div-two mb-3 d-flex justify-content-center">
+						<label for="email">
+							Votre email :
+						</label>
+						<input type="email" name="email" id="email" placeholder="Votre email" required>
+					</div>
+					<div class="div-two mb-3 d-flex justify-content-center">
+						<label for="password">Votre mot de passe :
+						</label>
+						<input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
+					</div>
+					<div class="div-two mb-3 d-flex justify-content-center">
+						<input class="btn" type="submit" value="Connexion">
+					</div>
 				</div>
-				<div class=" div-two mb-3 d-flex justify-content-center">
-					<label for="password">Votre mot de passe :
-					</label>
-					<input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
-				</div>
-				<div class=" div-two mb-3 d-flex justify-content-center">
-					<input class="btn btn-success" type="submit" value="Connexion">
-				</div>
-			</div>
-		</form>
-	</section>
-
+			</form>
+		</section>
+	</main>
 {% endblock %}

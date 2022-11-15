@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light --bs-info">
+<nav class="navbar sticky-top">
 	{% if user %}
 		<a class="navbar-brand" href="series">
 			<img src="assets/images/MY.png">
@@ -8,44 +8,36 @@
 			<img src="assets/images/MY.png">
 		</a>
 	{% endif %}
-	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-		<ul class="navbar-nav">
-			{% if user %}
 
-				<li class="nav-item active">
-					<a class="nav-link text-white h6" href="/series">Séries</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link text-white h6" href="addserie">Ajout Série</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="deconnexion">Déconnexion</a>
-				</li>
-				<li>
-					<div class="dropdown">
-						<form class="d-flex" role="search" action="/search" method="GET">
-							<div class="form-group">
-								<label for="research"></label>
-								<input class="form-control me-2" name="research" type="search" placeholder="Search" aria-label="Search">
-								<button class="btn btn-outline-success" type="submit">Search</button>
-							</div>
-						</form>
+
+	<ul>
+		{% if user %}
+			<li>
+				<a href="/series">Séries</a>
+			</li>
+			<li>
+				<a href="addserie">Ajout Série</a>
+			</li>
+			<li>
+				<a href="deconnexion">Déconnexion</a>
+			</li>
+			<li>
+				<form role="search" action="/search" method="GET">
+					<div class="form-group">
+						<label for="research"></label>
+						<input class="form-control" name="research" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
 					</div>
-				</li>
+				</form>
+			</li>
 
-			{% else %}
-				<div class="bootstrapachier d-flex">
-					<li class="navlanding nav-item">
-						<a class=" navregister nav-link" href="connexion">Se connecter</a>
-					</li>
-					<li class="navlanding nav-item">
-						<a class="navregister nav-link" href="register">S'enregistrer</a>
-					</li>
-				</div>
-			{% endif %}
-		</ul>
-	</div>
+		{% else %}
+			<li>
+				<a href="connexion">Se connecter</a>
+			</li>
+			<li>
+				<a href="register">S'enregistrer</a>
+			</li>
+		{% endif %}
+	</ul>
 </nav>

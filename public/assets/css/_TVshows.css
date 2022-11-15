@@ -32,6 +32,7 @@
         height: 20rem;
     }
 }
+
 .TVshows li.carousel-serie {
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
     border-radius: 12px;
@@ -40,6 +41,7 @@
     overflow: auto;
     margin: 1.2rem 0 1rem 1rem;
 }
+
 @media screen and (min-width: 768px) {
     .TVshows li.carousel-serie {
         min-width: 45vw;
@@ -77,8 +79,8 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    
-    background: linear-gradient(166deg, rgba(255,255,255,1) 7%, rgba(29,67,80,1) 100%);;
+
+    background: var(--third-color);
     height: 20%;
     padding: 1rem;
 }
