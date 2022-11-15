@@ -1,49 +1,43 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light --bs-info">
-	<a class="navbar-brand" href="/series">
-		<img src="assets/images/MY.png">
-	</a>
-	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-		<ul class="navbar-nav">
+<nav class="navbar sticky-top">
+	{% if user %}
+		<a class="navbar-brand" href="series">
+			<img src="assets/images/MY.png">
+		</a>
+	{% else %}
+		<a class="navbar-brand" href="/">
+			<img src="assets/images/MY.png">
+		</a>
+	{% endif %}
 
-            {% if user %}
-            <li class="nav-item active">
-				<a class="nav-link text-white h6" href="/series">Séries</a>
+
+	<ul>
+		{% if user %}
+			<li>
+				<a href="/series">Séries</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link text-white h6" href="addserie">Ajout série</a>
+			<li>
+				<a href="addserie">Ajout Série</a>
 			</li>
-            <li class="nav-item">
-				<a class="nav-link" href="deconnexion">Déconnexion</a>
+			<li>
+				<a href="deconnexion">Déconnexion</a>
 			</li>
-            <div class="dropdown">
-				<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-					Recherche
-				</button>
-				<form action="/search" method="GET" class="dropdown-menu p-4 dropdown-menu-end ">
-					<div class="mb-3">
-						<div class="form-group">
-							<label for="research"></label>
-							<input type="text" class="form-control" name="research"/>
-							<button type="submit" class="btn btn-primary">
-								rechercher
-							</button>
-						</div>
+			<li>
+				<form role="search" action="/search" method="GET">
+					<div class="form-group">
+						<label for="research"></label>
+						<input class="form-control" name="research" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
 					</div>
 				</form>
-			</div>
-          {% else %}
-            <li class="nav-item">
-				<a class="nav-link" href="connexion">Se connecter</a>
 			</li>
-             <li class="nav-item">
-				<a class="nav-link" href="register">S'enregistrer</a>
+
+		{% else %}
+			<li>
+				<a href="connexion">Se connecter</a>
 			</li>
-            {% endif %}
-		</ul>
-	</div>
+			<li>
+				<a href="register">S'enregistrer</a>
+			</li>
+		{% endif %}
+	</ul>
 </nav>
-
-
