@@ -1,44 +1,33 @@
 <!-- Footer -->
 <footer class="text-center text-white">
 
-	<div class="container">
+	<div class="container-fluid">
 
 		<section>
 			<div class="row text-center d-flex justify-content-center pt-3">
 				<div class="col-md-2">
-					<h6 class="text-uppercase">
-						<a href="#!" class="text-white text-decoration-none">Contact 📝</a>
+					<h6 class="text">
+						<a href="#!" class="text-decoration-none">Contact 📝</a>
 					</h6>
 				</div>
 
-				<div class="col-md-2">
-					<h6 class="text-uppercase">
-						<a href="#!" class="text-white text-decoration-none">Partenaires 🤝</a>
-					</h6>
+				<div
+					class="col-md-2">
+					{# Changement automatique de l'année #}
+					<a class="text-white text-decoration-none">
+						©{{"now"|date("Y")}}
+						⚡PHPPower⚡</a>
 				</div>
 
 				<div class="col-md-2">
-					<h6 class="text-uppercase">
-						<a href="#!" class="text-white text-decoration-none">Signaler un bug 🦟</a>
+					<h6 class="text">
+						<a href="#!" class="text-decoration-none">Infos légales ⚖️</a>
 					</h6>
 				</div>
-
-				<div class="col-md-2">
-					<h6 class="text-uppercase">
-						<a href="#!" class="text-white text-decoration-none">Infos légales ⚖️</a>
-					</h6>
-				</div>
+				<!-- Copyright -->
 
 			</div>
 
 		</section>
-	</div>
-	<!-- Copyright -->
-	<div
-		class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
-		{# Changement automatique de l'année #}
-		©{{"now"|date("Y")}}
-		<a class="text-white text-decoration-none" href="#">
-			⚡PHPPower⚡</a>
 	</div>
 </footer>

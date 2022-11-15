@@ -1,0 +1,28 @@
+.connect .container-connect {
+    margin: 1rem auto;
+    width: clamp(10rem, 80vw, 60rem);
+    border: 6px solid var(--button-color);
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: rgba(44, 88, 103, 0.4);
+}
+
+.connect .div-two {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3em;
+    gap: 3px;
+}
+
+.connect .btn {
+    color: var(--font-color1);
+    background-color: var(--button-color);
+}
+
+.connect .btn:hover {
+    background-color: var(--button-color-hover);
+}
+
+.connect input {
+    padding: .5rem;
+}

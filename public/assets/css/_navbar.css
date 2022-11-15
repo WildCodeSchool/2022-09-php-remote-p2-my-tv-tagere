@@ -1,33 +1,62 @@
-nav{
-    margin-bottom: auto;
-    opacity:1;
-    transition:.5s;
-    background: linear-gradient(#3b0202, #f81e1e); 
-    align-items: flex-end;
-}
-nav.scrolled{
-    opacity:0.5;
+nav {
+    opacity: 1;
+    transition: .5s;
+    background: var(--linear-color);
+    height: 6rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h6{
-    font-size: x-large;
-    
-}
-h6:hover{
-    text-decoration: wavy;
-}
-
-nav:hover{
-    opacity:1;
+nav img {
+    object-fit: contain;
+    height: 80%;
+    width: auto;
+    margin-left: .5rem;
 }
 
-.navbar img{
-   object-fit: contain;
-   height: 5rem;
-   width: auto;
-   margin: 0.1rem;
-   /* padding temporaire peut être */
-   padding-bottom: 1rem;
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    list-style: none;
+    margin: 0;
+    gap: .5rem;
+    margin-right: .5rem;
+    padding-left: 0;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul li {
+    color: var(--font-color1);
+    border-radius: 12px;
+    background: var(--button-color);
+    padding: 1rem;
+}
+
+nav ul li:hover {
+    transition: 0.4s;
+    background-color: var(--button-color-hover);
+}
+
+.navbar-brand {
+    height: 100%;
 }
 
 
+
+@media screen and (min-width: 768px) {}
+
+
+
+@media screen and (min-width: 992px) {
+    nav.scrolled {
+        opacity: 0.7;
+    }
+
+    nav:hover {
+        opacity: 1;
+    }
+}
