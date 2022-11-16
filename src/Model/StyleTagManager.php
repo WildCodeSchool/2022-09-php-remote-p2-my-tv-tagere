@@ -32,7 +32,7 @@ class StyleTagManager extends AbstractManager
                 LEFT JOIN user_serie us ON us.serie_id=s.id AND us.user_id=:user_id
                 WHERE st.id='" . $mostUsedTag['id'] . "'
                 LIMIT 4;");
-            $statement->bindValue('user_id', 1, \PDO::PARAM_INT);
+            $statement->bindValue('user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
             $statement->execute();
 
             $mostUsedTag['series'] = $statement->fetchAll(\PDO::FETCH_ASSOC);

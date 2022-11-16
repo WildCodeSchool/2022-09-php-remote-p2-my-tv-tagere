@@ -18,7 +18,7 @@ class UserSerieManager extends AbstractManager
         $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
             " WHERE serie_id=:serieId AND user_id=:userId");
         $statement->bindValue('serieId', $serieId, \PDO::PARAM_INT);
-        $statement->bindValue('userId', 1, \PDO::PARAM_INT);
+        $statement->bindValue('userId', $_SESSION['user_id'], \PDO::PARAM_INT);
         $statement->execute();
         $userSerie = $statement->fetch();
 
@@ -31,7 +31,7 @@ class UserSerieManager extends AbstractManager
             $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
                 "(serie_id, user_id) VALUES (:serie_id, :user_id)");
             $statement->bindValue('serie_id', $serieId, \PDO::PARAM_INT);
-            $statement->bindValue('user_id', 1, \PDO::PARAM_INT);
+            $statement->bindValue('user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
             $statement->execute();
         }
     }
@@ -39,7 +39,9 @@ class UserSerieManager extends AbstractManager
     public function favoritesSeriesById()
     {
         $statement = $this->pdo->query("SELECT serie_id as id FROM " . self::TABLE .
-            " WHERE user_id=1");
+            " WHERE user_id=:user_id");
+        $statement->bindValue('user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
+        $statement->execute();
         $favSeries = $statement->fetchAll();
         return $favSeries;
     }
