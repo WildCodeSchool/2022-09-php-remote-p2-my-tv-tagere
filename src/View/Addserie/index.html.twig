@@ -1,0 +1,62 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Ajoute ta série
+{% endblock %}
+
+{% block content %}
+	<header class="TVshowsHeader"></header>
+	<main class="addSerie">
+		<h1 class="titleAddserie">Ajouter votre série</h1>
+		{% for error in errors %}
+			<section>
+				<h3 class="errorsAddserie">{{error}}</h3>
+			</section>
+		{% endfor %}
+		<section>
+			<p>Recherchez votre serie ou ajoutez la manuellement</p>
+			<input type="text" id="serieSearch" name="serieSearch" value="" required>
+			<button id="serieSearchButton">
+				Recherche !</button>
+			<div class="fetchedSeries"></div>
+		</section>
+		<section>
+			<form class="addForm" action="/addserie" method="post" enctype="multipart/form-data">
+				<div>
+					<label for="serieName">Nom série:</label><br/>
+					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example" required>
+				</div>
+				<div>
+					<label for="nbOfSeasons">Date de diffusion:</label><br/>
+					<input class="form-control" type="text" id="year" name="year" aria-label="default input example" required>
+				</div>
+				<div>
+					<label for="year">Nombre de saisons</label><br/>
+					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example">
+
+
+				</div>
+				<div>
+					<label for="description">Description</label><br/>
+					<textarea id="description" name="description" placeholder="Description"></textarea>
+				</div>
+				<div>
+					<p>Style(s) (2 maximum) :</p>
+					{% for styleTag in styleTags %}
+						<input type="checkbox" name="tags[]" class="styleTags" value="{{styleTag.id}}"/>
+						<label for="tags">{{styleTag.name}}</label>
+					{% endfor %}
+				</div>
+				<label for="img">Illustration</label><br/>
+				<div class="input-group">
+					<input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+				</div>
+				<div>
+					<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Ajout">
+				</div>
+			</form>
+		</section>
+	</main>
+{% endblock %}
+{% block javascript %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+	<script src="/assets/scripts/addScript.js"></script>
+{% endblock %}

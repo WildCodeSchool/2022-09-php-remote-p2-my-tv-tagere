@@ -1,0 +1,21 @@
+:root {
+    /*** Colors Variables ***/
+    --main-color: rgb(224, 224, 252);
+    --second-color: #fff4cd;
+    --third-color: #292929;
+    --button-color: rgba(44, 88, 103, 0.7);
+    --button-color-hover: rgba(44, 88, 103, 1);
+
+    /*** Font Color ***/
+    --font-color1: rgb(224, 224, 252);
+
+    /* Couleur nav ,background, footer */
+
+    --linear-color: linear-gradient(92.7deg, #1D4350 8.5%, #A43931 90.2%);
+
+
+    /*spacing variables*/
+    --spacing: 8px;
+    --spacing-xl: calc(var(--spacing) * 2);
+    --spacing-gap: 1rem;
+}

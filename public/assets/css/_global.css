@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Righteous&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0rem;
+    padding: 0rem;
+
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: var(--linear-color);
+    background-size: 150% 150%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+    font-family: 'Righteous', cursive;
+    color: var(--font-color1);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: var(--font-color1);
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--font-color1);
+}
+
+h3 {
+    color: var(--font-color1);
+}
+
+a {
+    color: var(--font-color1);
+}
+
+a:hover {
+    color: var(--font-color1);
+}
