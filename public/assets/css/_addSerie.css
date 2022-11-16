@@ -29,12 +29,13 @@ main.addSerie {
 
 textarea {
     width: 100%;
+    border-radius: .375rem;
 }
 
 .addSerie ul.carousel-series {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     list-style: none;
     margin: 0 1rem;
     padding-left: 0;
@@ -42,6 +43,12 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
+    .addSerie ul.carousel-series {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 960px) {
     .addSerie ul.carousel-series {
         grid-template-columns: repeat(5, 1fr);
     }
@@ -55,29 +62,26 @@ textarea {
     transition: .3s ease-in-out;
 }
 
-.addSerie ul.carousel-series {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0 1rem;
-    padding-left: 0;
-    margin: 3px solid red;
+.addSerie li.carousel-serie:nth-last-child(-n+6) {
+    display: none;
 }
 
 @media screen and (min-width: 768px) {
-    .addSerie ul.carousel-series {
-        grid-template-columns: repeat(5, 1fr);
+    .addSerie li.carousel-serie:nth-last-child(-n+6) {
+        display: initial;
+    }
+
+    .addSerie li.carousel-serie:nth-last-child(-n+4) {
+        display: none;
     }
 }
 
-.addSerie li.carousel-serie {
-    overflow: auto;
-    height: 12rem;
-    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    transition: .3s ease-in-out;
+@media screen and (min-width: 960px) {
+    .addSerie li.carousel-serie:nth-last-child(-n+4) {
+        display: initial;
+    }
 }
+
 
 .addSerie li img:first-of-type {
     width: 100%;
@@ -149,4 +153,11 @@ textarea {
 .addSerie .h3 {
     color: #fff;
     font-size: 1rem !important;
+}
+
+.addSerie .btn {
+    border: 1px solid white;
+    color: white;
+    margin: .5rem auto;
+
 }
