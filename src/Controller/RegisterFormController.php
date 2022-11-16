@@ -44,11 +44,11 @@ class RegisterFormController extends AbstractController
     private function validate(array $user)
     {
         $errors = [];
-        if (empty($user['firstname']) || mb_strlen($user['firstname']) <= 2) {
-            $errors[] = 'Votre prémon est obligatoire';
+        if (empty($user['firstname']) || mb_strlen($user['firstname']) <= 1) {
+            $errors[] = 'Votre prémon est obligatoire et doit comporter plus d\'une lettre';
         }
-        if (empty($user['lastname']) || mb_strlen($user['lastname']) <= 2) {
-            $errors[] = 'Votre nom de famille est obligatoire';
+        if (empty($user['lastname']) || mb_strlen($user['lastname']) <= 1) {
+            $errors[] = 'Votre nom de famille est obligatoire et doit comporter plus d\'une lettre';
         }
         if (empty($user['birthdate'])) {
             $errors[] = 'Votre date de naissance est obligatoire';
