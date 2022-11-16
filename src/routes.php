@@ -20,6 +20,7 @@ return [
     'addserie' => ['AddserieController', 'addSerie',],
     'series/addOrDeleteToUser' => ['UserSerieController', 'addToUser', ['id']],
     'seriepage' => ['SeriePageController', 'index', ['id']],
+    'seriepage/edit' => ['SeriePageController', 'edit', ['id']],
     'etagere' => ['EtagereController', 'index',],
     'search' => ['ResearchController', 'getResearch', ['research']],
 ];

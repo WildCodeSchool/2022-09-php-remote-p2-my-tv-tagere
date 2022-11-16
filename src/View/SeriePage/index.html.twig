@@ -7,13 +7,18 @@
 {% block content %}
 	<body>
 		<main>
-
 			<h1>
 				{{serie.title}}
 			</h1>
 			<div class="imginfo">
 				<img src="/assets/images/shows/{{serie.image}}" alt="">
 			</div>
+
+			<p>
+				{% for tag in serie.styleTags %}
+					{{tag.name}},
+				{% endfor %}
+			</p>
 
 			<article class="infogen">
 				<h2>Synopsis</h2>
@@ -29,6 +34,12 @@
 					{{serie.nb_of_seasons}}</p>
 
 			</article>
+			<div>
+				<p>Vous voyez une erreur ?</p>
+				<a class="navbar-brand" href="seriepage/edit?id={{serie.id}}">
+					<button>Modifier les données</button>
+				</a>
+			</div>
 
 		</main>
 
