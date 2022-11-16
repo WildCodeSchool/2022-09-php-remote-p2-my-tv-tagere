@@ -12,24 +12,44 @@
 
 	<ul>
 		{% if user %}
-			<li>
-				<a href="/series">Séries</a>
+
+			<div class="final__dropdown">
+				<button class="final__dropdown__hover">Dropdown</button>
+				<div class="final__dropdown__menu">
+					<a href="series">Accueil</a>
+					<a href="etagere">Mon étagère</a>
+					<a href="addserie">Ajout Série</a>
+				</div>
+			</div>
+
+
+			<li class="full">
+				<a href="series">Accueil</a>
 			</li>
-			<li>
+			<li class="full">
+				<a href="etagere">Mon étagère</a>
+			</li>
+			<li class="full">
 				<a href="addserie">Ajout Série</a>
 			</li>
-			<li>
+			<li class="full deco">
 				<a href="deconnexion">Déconnexion</a>
 			</li>
-			<li>
-				<form role="search" action="/search" method="GET">
+			<div class="dropdown">
+				<button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+					🔎
+
+				</button>
+				<form class="dropdown-menu p-4 dropdown-menu-end" role="search" action="/search" method="GET">
 					<div class="form-group">
 						<label for="research"></label>
 						<input class="form-control" name="research" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
+						<button class="btn" type="submit">search</button>
+
 					</div>
 				</form>
-			</li>
+			</div>
+
 
 		{% else %}
 			<li>
