@@ -5,8 +5,8 @@
 
 {% block content %}
 	<main class="TVshows">
-		<h1>Qu'allons nous regarder aujourd'hui {{user.firstname}} ?</h1>
-
+		<h1>Qu'allons nous regarder aujourd'hui,{{user.firstname}}
+			?</h1>
 		{% for tag in seriesByTag %}
 			<h2>{{tag.tagName}}</h2>
 			<section class="carouselSerie">

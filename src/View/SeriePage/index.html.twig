@@ -6,42 +6,39 @@
 
 {% block content %}
 	<body>
-		<main>
-			<h1>
-				{{serie.title}}
-			</h1>
+		<main class="seriePage">
 			<div class="imginfo">
 				<img src="/assets/images/shows/{{serie.image}}" alt="">
 			</div>
 
+			<article class="infogen"></p>
+			<h1>
+				{{serie.name}}
+			</h1>
 			<p>
 				{% for tag in serie.styleTags %}
 					{{tag.name}},
 				{% endfor %}
-			</p>
 
-			<article class="infogen">
 				<h2>Synopsis</h2>
-				<p>
-					{{serie.description}}
-					<br></p>
+			</p>
+			<p>
+				{{serie.description}}
+				<br></p>
 
-				<p>Année de première diffusion :
-					{{serie.year}}
-					<br></p>
+			<p>Année de première diffusion :
+				{{serie.year}}
+				<br></p>
 
-				<p>Nombre de saisons :
-					{{serie.nb_of_seasons}}</p>
+			<p>Nombre de saisons :
+				{{serie.nb_of_seasons}}</p>
 
-			</article>
-			<div>
+			<div class="modify">
 				<p>Vous voyez une erreur ?</p>
 				<a class="navbar-brand" href="seriepage/edit?id={{serie.id}}">
 					<button>Modifier les données</button>
 				</a>
 			</div>
-
-		</main>
-
+		</article>
 	</body>
-{% endblock %}
+</main></body>{% endblock %}
