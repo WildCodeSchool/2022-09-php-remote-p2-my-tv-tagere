@@ -14,12 +14,11 @@
 			<form class="addForm" action="/addserie" method="post" enctype="multipart/form-data">
 				<div>
 					<label for="serieName">Nom série:</label><br/>
-					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example">
+					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example" required>
 				</div>
-
 				<div>
 					<label for="nbOfSeasons">Date de diffusion:</label><br/>
-					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example">
+					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example" required>
 				</div>
 				<div>
 					<label for="year">Nombre de saisons</label><br/>
@@ -29,15 +28,22 @@
 					<label for="description">Description</label><br/>
 					<textarea id="description" name="description" placeholder="Description"></textarea>
 				</div>
-
-				<label for="img">Illustration</label><br/>
-				<div class="input-group">
-					<input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-				</div>
 				<div>
-					<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Ajout">
-				</div>
-			</form>
-		</section>
-	</main>
-{% endblock %}
+					<p>Style(s) (2 maximum) :</p>
+					{% for styleTag in styleTags %}
+						<input type="checkbox" name="tags[]" class="styleTags" value="{{styleTag.id}}"/>
+						<label for="tags">{{styleTag.name}}</label>
+					</br>
+				{% endfor %}
+			</div>
+			<label for="img">Illustration</label><br/>
+			<div class="input-group">
+				<input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+			</div>
+			<div>
+				<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Ajout">
+			</div>
+		</form>
+	</section>
+</main>{% endblock %}{% block javascript %}
+<script src="/assets/scripts/addScript.js"></script>{% endblock %}
