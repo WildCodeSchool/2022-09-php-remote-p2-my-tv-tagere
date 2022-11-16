@@ -7,6 +7,10 @@ nav {
     align-items: center;
 }
 
+nav .navbar-toggler {
+    margin-right: 1rem;
+}
+
 nav img {
     object-fit: contain;
     height: 80%;
@@ -20,7 +24,6 @@ nav ul {
     align-items: baseline;
     list-style: none;
     margin: 0;
-    gap: .5rem;
     margin-right: .5rem;
     padding-left: 0;
 }
@@ -31,75 +34,23 @@ nav a {
 
 nav ul li {
     color: var(--font-color1);
-    border-radius: 12px;
-    background: var(--button-color);
+    background: var(--button-color-hover);
     padding: 1rem;
+    width: 100%
 }
 
-/* =========================
-   DROPDOWN MENU
-   ========================= */
-.final__dropdown {
-    position: relative;
-    z-index: 10;
-    display: inline-block;
-}
-
-.final__dropdown__hover {
-    display: inline-block;
-    padding: 10px;
-    background-color: #323b40;
-    color: #ffffff;
-    border: 0 solid #323b40;
-    cursor: pointer;
-}
-
-.final__dropdown__hover:hover {
-    background-color: #222222;
-}
-
-.final__dropdown__menu {
-    position: absolute;
-    display: none;
-    top: 100%;
-    left: 0;
-    min-width: 200px;
-    background-color: #ffffff;
-    color: #323b40;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-}
-
-.final__dropdown:hover .final__dropdown__menu {
-    display: block;
-}
-
-.final__dropdown__menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    border-width: 0;
-    border-top: 1px solid #e0e0e0;
-}
-
-.final__dropdown__menu a:hover {
-    background-color: #f0f0f0;
-    color: #323b40;
-}
-
-
-nav li.full {
-    display: none;
-}
-
-@media screen and (min-width: 768px) {
-    nav li.full {
-        display: initial;
+@media screen and (min-width:992px) {
+    nav ul {
+        gap: 1rem;
     }
 
-    .final__dropdown {
-        display: none;
+    nav ul li {
+        background: var(--button-color);
+        width: initial;
+        border-radius: 12px;
     }
 }
+
 
 nav ul li.deco {
     background-color: var(--third-color);
@@ -110,7 +61,6 @@ nav .dropdown-toggle {
     border-radius: 12px;
     background: var(--button-color);
     padding: 1rem;
-
 }
 
 nav ul li:hover {
@@ -122,20 +72,49 @@ nav ul li:hover {
     height: 100%;
 }
 
-.navbar form,
-.navbar label,
-.navbar>btn {
+.navbar form {
     background-color: var(--button-color);
     color: var(--font-color1);
+}
+
+@media screen and (min-width:992px) {
+    .navbar form {
+        background: none;
+    }
+
+    .navbar .form-control {
+        display: initial;
+        width: inherit;
+    }
+
+    .navbar input {
+        height: 3rem;
+    }
+
+    .navbar .formSearch {
+        padding: 0rem;
+    }
+}
+
+.navbar button.btn {
+    margin-top: .5rem;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--font-color1);
+    color: var(--font-color1);
+    text-align: center;
 }
 
 
 
 
+@media screen and (min-width:992px) {
+    .navbar button.btn {
+        width: inherit;
+        margin-top: 0;
+        height: 3rem;
+    }
 
-
-
-@media screen and (min-width: 992px) {
     nav.scrolled {
         opacity: 0.7;
     }

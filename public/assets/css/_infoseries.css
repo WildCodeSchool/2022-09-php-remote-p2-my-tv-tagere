@@ -13,8 +13,10 @@
 }
 
 .imginfo img {
-    border-radius: 15px;
+    border-radius: 12px;
     border: 6px solid var(--button-color);
-    max-width: 100%;
+    width: 100vw;
+    height: clamp(5rem, 40vw, 60rem);
+    object-fit: cover;
 
 }
