@@ -11,6 +11,8 @@
 					{% for serie in favSeries %}
                     <pre>
                         {{ dump(serie) }}
+                        {{dump(post)}}
+
                     </pre>
 						<li class="carousel-serie">
 							<a href="/seriepage?id={{serie.id}}">
@@ -23,7 +25,7 @@
                             <div class="container">
                             <div class="progress mb-3">
 
-                <div class="progress-bar" style = "width: {{(serie.serie.seen / serie.serie.totseasons) * 100}}%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{(serie.serie.seen / serie.serie.totseasons) * 100}}%</div>
+                <div class="progress-bar" style = "width: {{(serie.serie.seen / serie.serie.totseasons) * 100}}%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ ((serie.serie.seen / serie.serie.totseasons) * 100) | round(0, 'floor') }}%</div>
             </div>
                             </div>
                             <div>
@@ -34,13 +36,14 @@
                             <option id="{{number}}" name="{{number}}" value="saison {{number}}">Pas vu</option>
                             {% for saison in 1.. serie.serie.totseasons %}
                             {% set number = number + 1 %}
-                            <option id="{{number}}" name="{{number}}" value="saison {{number}}">Saison {{number}}</option>
+                            <option id="{{number}}" name="{{number}}" value="{{number}}">Saison {{number}}</option>
                             {% endfor %}
+                            </select>
                             </div>
                             <div>
 					<input  type="submit" value="Mettre à jour">
 				</div>
-                            </select>
+
 
                             </form>
 						</li>

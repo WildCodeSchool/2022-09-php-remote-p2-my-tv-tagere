@@ -21,25 +21,32 @@ class EtagereController extends AbstractController
         );
     }
 
-    public function edit(int $id): ?string
+    public function edit(): ?string
     {
 
-        $seenUpdate = new UserSerieManager();
-        $serieUpdate = $this->seriemodel->selectOneById($id);
+        $etagereModel = new UserSerieManager();
+        $displayFavSeries = $etagereModel->favoritesSeriesById();
+
+        $serieManager = new SerieManager();
+        $favSeries = $serieManager->createCards($displayFavSeries);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_POST['id'] = $_GET['id'];
-            $serieUpdate = array_map('trim', $_POST);
 
+            $serie_id= $etagereModel->selectOneById($_SESSION['user_id']);
+            $_POST['serie_id'] = $serie_id['serie_id'];
+            var_dump($_POST);
 
-            $this->seriemodel->update($serieUpdate);
-
-            header('Location: /seriepage?id=' . $id);
+            $seenUpdate = $etagereModel->update($_POST);
+            header('Location: /etagere');
             return null;
-        } else {
-            return $this->twig->render('SeriePage/update.html.twig', [
-                'serie' => $serie,
-            ]);
+
         }
+
+        return $this->twig->render(
+            'Etagere/index.html.twig',
+            ['favSeries' => $favSeries,
+            'post' => $_POST]
+        );
+
     }
 }

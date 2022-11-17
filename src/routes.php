@@ -21,6 +21,6 @@ return [
     'series/addOrDeleteToUser' => ['UserSerieController', 'addToUser', ['id']],
     'seriepage' => ['SeriePageController', 'index', ['id']],
     'seriepage/edit' => ['SeriePageController', 'edit', ['id']],
-    'etagere' => ['EtagereController', 'index',],
+    'etagere' => ['EtagereController', 'edit',],
     'search' => ['ResearchController', 'getResearch', ['research']],
 ];
