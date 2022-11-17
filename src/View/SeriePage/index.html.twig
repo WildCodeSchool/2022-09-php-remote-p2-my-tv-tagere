@@ -3,7 +3,6 @@
 {% block title %}Détails de la série
 {% endblock %}
 
-
 {% block content %}
 	<main class="seriePage position-relative">
 		<div class="imginfo">
@@ -14,7 +13,8 @@
 		<h1>
 			{{serie.name}}
 			<a href="seriepage/edit?id={{serie.id}}" class="editSerie">
-				<i class="gg-pen"></i>
+				<img src="/assets/images/pen2.png"/><img src="/assets/images/pen.svg"/>
+
 			</a>
 		</h1>
 		<div class="infoSerieComp">
@@ -23,7 +23,8 @@
 					{{tag.name}},
 				{% endfor %}
 
-				<h2>Synopsis</h2>
+				<h2>Synopsis :
+				</h2>
 			</p>
 			<p>
 				{{serie.description}}
