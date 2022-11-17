@@ -9,6 +9,9 @@
 			<section class="carouselSerie">
 				<ul class="carousel-series">
 					{% for serie in favSeries %}
+                    <pre>
+                        {{ dump(serie) }}
+                    </pre>
 						<li class="carousel-serie">
 							<a href="/seriepage?id={{serie.id}}">
 								<img src="/assets/images/shows/{{serie.serie.image}}"/>
@@ -17,6 +20,29 @@
 								<h3 class="card-title">{{serie.serie.name}}</h3>
 								<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
 							</div>
+                            <div class="container">
+                            <div class="progress mb-3">
+
+                <div class="progress-bar" style = "width: {{(serie.serie.seen / serie.serie.totseasons) * 100}}%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{(serie.serie.seen / serie.serie.totseasons) * 100}}%</div>
+            </div>
+                            </div>
+                            <div>
+                            <form action="" method="POST">
+                            <label for="updateseenseasons">Saisons vues</label>
+                            <select name="updateseenseasons" id="updateseenseasons">
+                            {% set number = 0 %}
+                            <option id="{{number}}" name="{{number}}" value="saison {{number}}">Pas vu</option>
+                            {% for saison in 1.. serie.serie.totseasons %}
+                            {% set number = number + 1 %}
+                            <option id="{{number}}" name="{{number}}" value="saison {{number}}">Saison {{number}}</option>
+                            {% endfor %}
+                            </div>
+                            <div>
+					<input  type="submit" value="Mettre à jour">
+				</div>
+                            </select>
+
+                            </form>
 						</li>
 					{% endfor %}
 				</ul>

@@ -61,7 +61,7 @@ class SerieManager extends AbstractManager
 
         foreach ($cardsIds as &$cardsId) {
             $statement = $this->pdo->prepare(
-                "SELECT s.name, s.image, us.id AS fav FROM " . self::TABLE . " s " .
+                "SELECT s.name, s.image, s.nb_of_seasons AS totseasons, us.nb_of_seen_seasons AS seen, us.id AS fav FROM " . self::TABLE . " s " .
                     "LEFT JOIN user_serie us ON us.serie_id=s.id AND us.user_id=:user_id
                 WHERE s.id=:cardId"
             );

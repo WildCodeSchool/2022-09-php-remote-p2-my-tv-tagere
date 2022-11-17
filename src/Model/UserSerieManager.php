@@ -45,4 +45,15 @@ class UserSerieManager extends AbstractManager
         $favSeries = $statement->fetchAll();
         return $favSeries;
     }
+
+    public function update(array $serieUpdate): bool
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `nb_of_seen_seasons` = :seenSeasons, WHERE id=:id");
+
+        $statement->bindValue(':id', $serieUpdate['id'], PDO::PARAM_STR);
+        $statement->bindValue(':seenSeasons', $serieUpdate['seenSeasons'], PDO::PARAM_INT);
+
+
+        return $statement->execute();
+    }
 }
