@@ -31,12 +31,17 @@
 
 @media screen and (min-height: 800px) and (min-width:768px) {
     .infogen h2:first-of-type {
-        margin-top: calc(var(--spacing-xl)*8);
+        margin-top: calc(var(--spacing-xl)*7);
+    }
+
+    .editSerie {
+        display:none;
     }
 }
 
 
 .modify {
+    display:none;
     font-size: medium;
     position: absolute;
     right: var(--spacing-gap);
@@ -45,6 +50,12 @@
     background-color: rgba(63, 124, 145, 0.3);
     border-radius: 15px;
     padding: calc(var(--spacing-xl)/2);
+}
+
+@media screen and (min-height: 800px) and (min-width:768px) {
+    .modify{
+        display:initial
+    }
 }
 
 .modify button {
@@ -59,4 +70,16 @@
     font-size: clamp(3rem, 5vw, 20rem);
     /* border-bottom: 2px solid var(--main-color); */
     text-decoration: underline;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+.gg-pen{
+    border:2px solid white;
+    height:1rem;
+    width: 1rem;
+}
+
+.infoSerieComp {
+        font-size: clamp(1.1rem, 1.5vw, 2rem);
 }
