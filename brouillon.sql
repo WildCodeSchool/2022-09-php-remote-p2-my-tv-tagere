@@ -19,3 +19,8 @@ INNER JOIN serie_style_tag ON serie.id = serie_style_tag.serie_id;
 -- sélectionner les séries non visionnées appartenant au tag préféré (max de séries de ce tag ajoutées à l'étagère) de l'utilisateur
 
 SELECT * FROM serie WHERE id NOT IN (SELECT serie_id FROM user_serie WHERE user_id=:user_id);
+
+
+-- Brouillon d'Alex
+-- SELECT * FROM serie INNER JOIN serie_style_tag ON serie_id=serie.id INNER JOIN style_tag ON style_tag.id=serie_style_tag.style_tag_id WHERE serie.id NOT IN
+-- (SELECT serie_id, COUNT(serie_style_tag.serie_id) FROM user_serie WHERE serie_style_tag.serie_id GROUP BY style_tag.name ORDER BY count(style_tag.name) DESC LIMIT 1)
