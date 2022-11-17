@@ -31,15 +31,15 @@ class EtagereController extends AbstractController
         $favSeries = $serieManager->createCards($displayFavSeries);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $serieId = $etagereModel->selectOneById($_SESSION['user_id']);
+            $_POST['serie_id'] = $serieId['serie_id'];
 
-            $serie_id= $etagereModel->selectOneById($_SESSION['user_id']);
-            $_POST['serie_id'] = $serie_id['serie_id'];
-            var_dump($_POST);
+            $seasonUpdate = $_POST;
+            var_dump($seasonUpdate);
 
-            $seenUpdate = $etagereModel->update($_POST);
+            $etagereModel->update($seasonUpdate);
             header('Location: /etagere');
             return null;
-
         }
 
         return $this->twig->render(
@@ -47,6 +47,5 @@ class EtagereController extends AbstractController
             ['favSeries' => $favSeries,
             'post' => $_POST]
         );
-
     }
 }

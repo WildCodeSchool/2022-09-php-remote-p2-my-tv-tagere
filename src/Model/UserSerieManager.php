@@ -56,14 +56,14 @@ class UserSerieManager extends AbstractManager
         return $favSeries;
     }
 
-    public function update(array $seenUpdate): bool
+    public function update(array $seasonUpdate): bool
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `nb_of_seen_seasons` = :seenSeasons,
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `nb_of_seen_seasons` = :seenSeasons
         WHERE user_id = :user_id AND serie_id = :serie_id ");
 
-        $statement->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_STR);
-        $statement->bindValue(':serie_id', $_POST['serie_id'], PDO::PARAM_STR);
-        $statement->bindValue(':seenSeasons', $_POST['updateseenseasons'], PDO::PARAM_STR);
+        $statement->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+        $statement->bindValue(':serie_id', $seasonUpdate['serie_id'], PDO::PARAM_INT);
+        $statement->bindValue(':seenSeasons', $seasonUpdate['updateseenseasons'], PDO::PARAM_INT);
 
 
         return $statement->execute();
