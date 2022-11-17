@@ -37,12 +37,13 @@ class UserSerieManager extends AbstractManager
         }
     }
 
-    public function selectOneById(int $user_id): array|false
+    public function selectOneById(int $userId): array|false
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT serie_id FROM " . static::TABLE . " WHERE user_id=:user_id AND id=:id");
-        $statement->bindValue('user_id', $user_id, \PDO::PARAM_INT);
-        $statement->bindValue('id', $user_id, \PDO::PARAM_INT);
+        $statement = $this->pdo->prepare("SELECT serie_id FROM " . static::TABLE . " WHERE user_id=:user_id
+         AND id=:id");
+        $statement->bindValue('user_id', $userId, \PDO::PARAM_INT);
+        $statement->bindValue('id', $userId, \PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetch();

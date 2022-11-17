@@ -29,8 +29,7 @@ class EtagereController extends AbstractController
         $serieManager = new SerieManager();
         $favSeries = $serieManager->createCards($displayFavSeries);
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $serieId = $etagereModel->selectOneById($_SESSION['user_id']);
             $_POST['serie_id'] = $serieId['serie_id'];
 
@@ -56,6 +55,5 @@ class EtagereController extends AbstractController
             'Etagere/index.html.twig',
             ['favSeries' => $favSeries,]
         );
-
     }
 }
