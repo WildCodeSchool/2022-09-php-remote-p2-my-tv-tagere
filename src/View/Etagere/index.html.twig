@@ -11,7 +11,8 @@
 					{% for serie in favSeries %}
                     <pre>
                         {{ dump(serie) }}
-                        {{dump(post)}}
+                        {{ dump (post)}}
+                        {{ dump(seasonUpdate) }}
 
                     </pre>
 						<li class="carousel-serie">
@@ -30,10 +31,10 @@
                             </div>
                             <div>
                             <form action="" method="POST">
-                            <label for="updateseenseasons">Saisons vues</label>
-                            <select name="updateseenseasons" id="updateseenseasons">
+                            <label for="updateseenseasons{{serie.serie.id}}">Saisons vues</label>
+                            <select name="updateseenseasons{{serie.serie.id}}" id="updateseenseasons">
                             {% set number = 0 %}
-                            <option id="{{number}}" name="{{number}}" value="saison {{number}}">Pas vu</option>
+                            <option id="{{number}}" name="{{number}}" value="{{number}}">Pas vu</option>
                             {% for saison in 1.. serie.serie.totseasons %}
                             {% set number = number + 1 %}
                             <option id="{{number}}" name="{{number}}" value="{{number}}">Saison {{number}}</option>
