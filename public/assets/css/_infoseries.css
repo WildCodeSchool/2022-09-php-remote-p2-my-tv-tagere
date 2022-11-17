@@ -6,20 +6,25 @@
 
 
 }
-
+.seriePage{
+    flex:1;
+}
 .infogen p {
     max-width: 60ch;
 }
 
 .imginfo {
     overflow: auto;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .imginfo img {
 
     position: absolute;
     width: 100%;
-    height: 85.2%;
+    height: 100%;
     filter: brightness(30%);
     object-fit: cover;
     z-index: -1;
