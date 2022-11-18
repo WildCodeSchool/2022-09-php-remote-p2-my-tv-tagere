@@ -8,7 +8,7 @@ class UserSerieManager extends AbstractManager
 {
     public const TABLE = 'user_serie';
 
-    public function addOrDeleteToUser(int $serieId)
+    public function addOrDeleteToUser(int $serieId): string
     {
         /*
         * Add (if not already added or Delete (if already added) a Show in user list
@@ -27,6 +27,7 @@ class UserSerieManager extends AbstractManager
             $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
             $statement->bindValue('id', $userSerie["id"], \PDO::PARAM_INT);
             $statement->execute();
+            return "deleted";
         } else {
             $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
                 "(serie_id, user_id, nb_of_seen_seasons) VALUES (:serie_id, :user_id, :nb_of_seen_seasons)");
@@ -34,6 +35,7 @@ class UserSerieManager extends AbstractManager
             $statement->bindValue('user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
             $statement->bindValue(':nb_of_seen_seasons', 0, \PDO::PARAM_INT);
             $statement->execute();
+            return "added";
         }
     }
 

@@ -5,7 +5,9 @@
 
 {% block content %}
 	<main class="TVshows">
-		<h1>Qu'allons nous regarder aujourd'hui {{user.firstname}} ?</h1>
+		<h1>Qu'allons nous regarder aujourd'hui,
+			{{user.firstname}}
+			?</h1>
 
 		{% for tag in seriesByTag %}
 			<h2>{{tag.tagName}}</h2>
@@ -18,7 +20,9 @@
 							</a>
 							<div class="card-content">
 								<h3 class="card-title">{{serie.name}}</h3>
-								<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
+								<a data-add-to-fav="{{serie.id}}" href="/series/addOrDeleteToUser?id={{serie.id}}">
+									<img class="favorite" src={% if serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/>
+								</a>
 							</div>
 						</li>
 					{% endfor %}
@@ -30,4 +34,5 @@
 {% endblock %}
 {% block javascript %}
 	<script src="/assets/scripts/script.js"></script>
+	<script src="/assets/scripts/ajaxRequest.js"></script>
 {% endblock %}

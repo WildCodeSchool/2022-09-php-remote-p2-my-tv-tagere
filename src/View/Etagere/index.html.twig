@@ -1,9 +1,9 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<header class="TVshowsHeader"></header>
-	<main>
-		<h1 class="titleAddserie">Ajouter votre série</h1>
+	<main class="etagere">
+		<h1>Bienvenue sur votre étagère !</h1>
+
 		<section>
 			{% for error in errors %}{% endfor %}
 			<section class="carouselSerie">
@@ -48,4 +48,7 @@
 
 		</section>
 	</main>
+{% endblock %}
+{% block javascript %}
+	<script src="/assets/scripts/ajaxRequest.js"></script>
 {% endblock %}
