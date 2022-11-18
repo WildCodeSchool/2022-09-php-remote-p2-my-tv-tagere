@@ -22,11 +22,11 @@
 .formUpdate {
     position: relative;
     /* justify-content: center; */
-    margin: 4rem auto;
+    margin: calc(var(--spacing-gap)*4) auto;
     width: clamp(10rem, 80vw, 60rem);
     border: 6px solid var(--button-color);
-    border-radius: 12px;
-    padding: 1rem;
+    border-radius: calc(var(--spacing)*1.5);
+    padding: var(--spacing-gap);
     background-color: rgba(44, 88, 103, 0.4);
 }
 
@@ -35,9 +35,9 @@
 }
 
 .serieEdit form div {
-    margin: .5rem;
+    margin: calc(var(--spacing-gap)/2);
 }
 
 .serieEdit form textarea {
-    padding: .5rem;
+    padding: calc(var(--spacing-gap)/2);
 }

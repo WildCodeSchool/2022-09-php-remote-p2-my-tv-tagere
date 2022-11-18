@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Righteous&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
 * {
     box-sizing: border-box;
     margin: 0rem;
@@ -15,32 +14,17 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    background-image: var(--linear-color);
-    background-size: 150% 150%;
-    animation: gradient 10s ease infinite;
-    height: 100vh;
-    font-family: 'Righteous', cursive;
+    background: var(--background-color);
+    font-family: 'League Spartan', sans-serif;
     color: var(--font-color1);
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 
 h1 {
     margin-top: 0;
-    font-size: 2rem;
+    font-size: calc(var(--spacing-gap)*2);
     color: var(--font-color1);
 }
 

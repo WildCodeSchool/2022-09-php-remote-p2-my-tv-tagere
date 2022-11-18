@@ -1,22 +1,26 @@
 .addForm {
     justify-content: center;
     margin: 0 10vw;
-    padding-top: 100px;
-    border: 6px solid rgb(92, 88, 115);
-    border-radius: 12px;
-    padding: 1rem;
-    background-color: rgba(82, 80, 99, 0.4);
+    padding-top: calc(var(--spacing)*12.5);
+    border: 6px solid var(--linear-color);
+    border-radius: calc(var(--spacing)*1.5);
+    padding: calc(var(--spacing)*2);
+    background-color:rgba(254, 251, 172, 0.3);
     font-size: large;
 
 }
 
+
+.titleAddserie {
+    color:var(--footer-color);
+}
 .inputGroupFileAddon04 {
     justify-content: flex-end;
 }
 
 .addSearch {
-    padding: .375rem .75rem;
-    font-size: 1rem;
+    padding: calc(var(--spacing)/1.33) calc(var(--spacing)*1.5);
+    font-size: calc(var(--spacing*2));
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
@@ -26,7 +30,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: .375rem;
+    border-radius: calc(var(--spacing)/1.33);
     transition: border-color .15s
 }
 
@@ -34,25 +38,26 @@ main.addSerie {
     text-align: center;
     margin: 0;
     padding: 0;
+    color: var(--footer-color);
 }
 
 .errorsAddserie {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: calc(var(--spacing)*2.5);
+    margin-bottom: calc(var(--spacing)*2.5);
 }
 
 textarea {
     width: 100%;
-    border-radius: .375rem;
+    border-radius: calc(var(--spacing)/1.33);
 }
 
 .addSerie ul.carousel-series {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: calc(var(--spacing)*2);
     list-style: none;
-    margin: 1rem;
+    margin: calc(var(--spacing)*2);
     padding-left: 0;
 }
 
@@ -71,9 +76,9 @@ textarea {
 .addSerie li.carousel-serie {
     display: none;
     overflow: auto;
-    height: 12rem;
+    height: calc(var(--spacing)*24);
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
+    border-radius: calc(var(--spacing)*1.5);
     transition: .3s ease-in-out;
 }
 
@@ -104,8 +109,8 @@ textarea {
 }
 
 .addSerie li img.favorite {
-    width: 2rem;
-    height: 2rem;
+    width: calc(var(--spacing)*3);
+    height: calc(var(--spacing)*3);
     object-fit: contain;
 }
 
@@ -115,35 +120,35 @@ textarea {
     background-color: var(--third-color);
     align-items: center;
     text-align: center;
-    color: #fff;
+    color:var(--font-color1);
     height: 30%;
-    padding: 1rem;
+    padding: calc(var(--spacing)*2);
 }
 
 .addSerie .card-content .button,
 .addSerie .card-content .a {
     border: 1px solid #F5F5F5;
     color: #F5F5F5;
-    padding: .3rem;
+    padding: calc(var(--spacing-gap)/3.33);
 }
 
 .addSerie .h3 {
     color: #fff;
-    font-size: 1rem !important;
+    font-size: var(--spacing-gap) !important;
 }
 
 .addSerie .card-content .button,
 .addSerie .card-content .a {
     border: 1px solid #F5F5F5;
     color: #F5F5F5;
-    padding: .3rem;
+    padding: calc(var(--spacing-gap)/3.33);
 }
 
 .addSerie .btn {
     color: white;
-    margin: .5rem auto;
+    margin: calc(var(--spacing-gap)/2) auto;
 }
 
 #serieSearchButton {
-    padding: .5rem .75rem;
+    padding: calc(var(--spacing-gap)/2) calc(var(--spacing-gap)/1.33);
 }
