@@ -108,3 +108,5 @@ VALUES (1,2),
 (16,1),
 (16,3);
 
+WHERE
+ user_id=:user_is 

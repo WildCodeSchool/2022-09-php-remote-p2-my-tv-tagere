@@ -72,4 +72,9 @@ class UserSerieManager extends AbstractManager
 
         return $statement->execute();
     }
+
+
+
+
+
 }

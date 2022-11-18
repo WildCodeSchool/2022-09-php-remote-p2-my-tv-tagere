@@ -74,4 +74,26 @@ class SerieManager extends AbstractManager
         }
         return $cardsIds;
     }
+
+    // SELECT s_t.id, COUNT(s.id) as numSerie, s_t.name FROM serie s
+    // JOIN serie_style_tag s_s_t ON s_s_t.serie_id=s.id
+    // JOIN style_tag s_t ON s_s_t.style_tag_id = s_t.id
+    // JOIN user_serie u_s ON u_s.serie_id = s.id
+    // GROUP BY s_t.id ORDER BY numSerie DESC;
+
+
+//     SELECT DISTINCT s.id, s.name, s.image, s_t.name, s_t.id AS styleId from serie s
+// JOIN serie_style_tag s_s_t ON s_s_t.serie_id=s.id
+// JOIN style_tag s_t ON s_s_t.style_tag_id = s_t.id
+// WHERE s.id NOT IN (SELECT serie_id FROM user_serie WHERE user_id='1')
+// AND s_t.id IN (
+//     SELECT s_t.id FROM serie s
+//     JOIN serie_style_tag s_s_t ON s_s_t.serie_id=s.id
+//     JOIN style_tag s_t ON s_s_t.style_tag_id = s_t.id
+//     JOIN user_serie u_s ON u_s.serie_id = s.id
+//     WHERE u_s.user_id=1
+//     GROUP BY s_t.id ORDER BY COUNT(s.id) DESC
+// );
+
+
 }
