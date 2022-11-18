@@ -30,12 +30,24 @@ class UserSerieManager extends AbstractManager
             return "deleted";
         } else {
             $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
-                "(serie_id, user_id) VALUES (:serie_id, :user_id)");
+                "(serie_id, user_id, nb_of_seen_seasons) VALUES (:serie_id, :user_id, :nb_of_seen_seasons)");
             $statement->bindValue('serie_id', $serieId, \PDO::PARAM_INT);
             $statement->bindValue('user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
+            $statement->bindValue(':nb_of_seen_seasons', 0, \PDO::PARAM_INT);
             $statement->execute();
             return "added";
         }
+    }
+
+    public function selectOneByid(int $favId): array
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT serie_id FROM " . static::TABLE . " WHERE user_id=:user_id
+         AND id=:id");
+        $statement->bindValue(':user_id', $_SESSION['id'], \PDO::PARAM_INT);
+        $statement->bindValue(':id', $favId, \PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetch();
     }
 
     public function favoritesSeriesById()
@@ -46,5 +58,18 @@ class UserSerieManager extends AbstractManager
         $statement->execute();
         $favSeries = $statement->fetchAll();
         return $favSeries;
+    }
+
+    public function update(array $seasonUpdate): bool
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `nb_of_seen_seasons` = :seenSeasons
+        WHERE user_id = :user_id AND serie_id = :serie_id ");
+
+        $statement->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+        $statement->bindValue(':serie_id', $seasonUpdate['serie'], PDO::PARAM_INT);
+        $statement->bindValue(':seenSeasons', $seasonUpdate['seen'], PDO::PARAM_INT);
+
+
+        return $statement->execute();
     }
 }
