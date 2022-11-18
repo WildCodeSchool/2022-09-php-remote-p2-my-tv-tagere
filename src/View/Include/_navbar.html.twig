@@ -1,46 +1,48 @@
-
 <nav class="navbar sticky-top navbar-expand-lg navbar-light --bs-info">
-{% if user %}
-    <a class="navbar-brand" href="series">
-		<img src="assets/images/MY.png">
-	</a>
-{% else %}
-    <a class="navbar-brand" href="/">
-		<img src="assets/images/MY.png">
-	</a>
-    {% endif %}
+	{% if user %}
+		<a class="navbar-brand" href="series">
+			<img src="assets/images/MY.png">
+		</a>
+	{% else %}
+		<a class="navbar-brand" href="/">
+			<img src="assets/images/MY.png">
+		</a>
+	{% endif %}
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 		<ul class="navbar-nav">
-		{% if user %}
-			<li>
-				<a href="/series">Séries</a>
-			</li>
-			<li>
-				<a href="addserie">Ajout Série</a>
-			</li>
-			<li>
-				<a href="deconnexion">Déconnexion</a>
-			</li>
-			<li>
-				<form role="search" action="/search" method="GET">
-					<div class="form-group">
+			{% if user %}
+
+				<li class="full">
+					<a href="series">Accueil</a>
+				</li>
+				<li class="full">
+					<a href="etagere">Mon étagère</a>
+				</li>
+				<li class="full">
+					<a href="addserie">Ajout Série</a>
+				</li>
+				<li class="formSearch">
+					<form role="search" action="/search" method="GET">
 						<label for="research"></label>
 						<input class="form-control" name="research" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-					</div>
-				</form>
-			</li>
+						<button class="btn" type="submit">Search</button>
+					</form>
+				</li>
+				<li class="full deco">
+					<a href="deconnexion">Déconnexion</a>
+				</li>
 
-		{% else %}
-			<li>
-				<a href="connexion">Se connecter</a>
-			</li>
-			<li>
-				<a href="register">S'enregistrer</a>
-			</li>
-		{% endif %}
-	</ul>
-</nav>
+
+			{% else %}
+				<li>
+					<a href="connexion">Se connecter</a>
+				</li>
+				<li>
+					<a href="register">S'enregistrer</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>

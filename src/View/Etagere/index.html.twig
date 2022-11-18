@@ -1,27 +1,25 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<header class="TVshowsHeader"></header>
-	<main>
-		<h1 class="titleAddserie">Ajouter votre série</h1>
+	<main class="etagere">
+		<h1>Bienvenue sur votre étagère !</h1>
+
 		<section>
 			{% for error in errors %}{% endfor %}
-			<section class="carouselSerie">
-				<ul class="carousel-series">
-					{% for serie in favSeries %}
-						<li class="carousel-serie">
-							<a href="/seriepage?id={{serie.id}}">
-								<img src="/assets/images/shows/{{serie.serie.image}}"/>
-							</a>
-							<div class="card-content">
-								<h3 class="card-title">{{serie.serie.name}}</h3>
-								<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
-							</div>
-						</li>
-					{% endfor %}
-				</ul>
-			</section>
-
+			<ul class="serieList">
+				{% for serie in favSeries %}
+					<li class="cardSerie">
+						<a href="/seriepage?id={{serie.id}}">
+							<img src="/assets/images/shows/{{serie.serie.image}}"/>
+						</a>
+						<div class="card-content">
+							<h3 class="card-title">{{serie.serie.name}}</h3>
+							<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
 		</section>
-	</main>
-{% endblock %}
+
+	</section>
+</main>{% endblock %}

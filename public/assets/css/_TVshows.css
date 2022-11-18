@@ -17,15 +17,6 @@
     background-color: rgba(57, 68, 72, 0.4);
 }
 
-.TVshows li.carousel-serie {
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    list-style-type: none;
-    min-width: 80vw;
-    overflow: auto;
-    margin: 1.2rem 0 1rem 1rem;
-}
-
 @media screen and (min-width: 768px) {
 
     .TVshows ul.carousel-series {
@@ -41,6 +32,7 @@
     overflow: auto;
     margin: 1.2rem 0 1rem 1rem;
 }
+
 
 @media screen and (min-width: 768px) {
     .TVshows li.carousel-serie {
@@ -79,7 +71,6 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-
     background: var(--third-color);
     height: 20%;
     padding: 1rem;
