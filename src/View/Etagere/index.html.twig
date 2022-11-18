@@ -12,7 +12,8 @@
                     <pre>
                         {{ dump(serie) }}
                         {{ dump (post)}}
-                        {{ dump(seasonUpdate) }}
+                        {{ dump(seasonUpdate)}}
+                        {{ dump(serie.serie.fav) }}
 
                     </pre>
 						<li class="carousel-serie">
@@ -31,8 +32,8 @@
                             </div>
                             <div>
                             <form action="" method="POST">
-                            <label for="updateseenseasons{{serie.serie.id}}">Saisons vues</label>
-                            <select name="updateseenseasons{{serie.serie.id}}" id="updateseenseasons">
+                            <label for="updateseenseasons{{serie.serie.fav}}">Saisons vues</label>
+                            <select name="updateseenseasons{{serie.serie.fav}}" id="updateseenseasons">
                             {% set number = 0 %}
                             <option id="{{number}}" name="{{number}}" value="{{number}}">Pas vu</option>
                             {% for saison in 1.. serie.serie.totseasons %}
@@ -42,7 +43,7 @@
                             </select>
                             </div>
                             <div>
-					<input  type="submit" value="Mettre à jour">
+                    <a class="navbar-brand" href="etagere/edit?id={{serie.serie.fav}}"><button>Mettre à jour</button></a>
 				</div>
 
 
