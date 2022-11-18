@@ -21,11 +21,12 @@ function fetchSeries(serieSearch) {
             let seriesHtml = `<section class="carouselSerie">
 				<ul class="carousel-series">`;
             for (serie of series) {
-                seriesHtml += `
-						<li class="carousel-serie">
-								<img src="${serie?.show?.image?.original}"/>
+                seriesHtml += `<li class="carousel-serie">
+								<img src="`
+                seriesHtml += serie?.show?.image?.original ? `${serie.show.image.original}` : "/assets/images/MY.png";
+                seriesHtml += `"/>
                                 <div class= "card-content">
-								<h3 class="card-title" id=cardContent data-id="${serie.show.id}">${serie.show.name}</h3>
+								<h3 class="card-title" id=cardContent data-id="${serie?.show?.id}">${serie?.show?.name}</h3>
 							</div>
 						</li >
                 `;
@@ -55,13 +56,13 @@ function fetchOneSerie(id) {
         .then(function (completeForm) {
             //console.log(JSON.stringify(completeForm, null, 2));
             let description
-            if (completeForm.summary != null) {
+            if (completeForm?.summary) {
                 description = completeForm.summary.slice(3, -4);
             } else {
                 description = "";
             }
-            document.getElementById('serieName').setAttribute('value', completeForm.name);
-            document.getElementById('year').setAttribute('value', completeForm.premiered);
+            document.getElementById('serieName').setAttribute('value', completeForm?.name);
+            document.getElementById('year').setAttribute('value', completeForm?.premiered);
             document.querySelector('#description').innerHTML = `${description}`;
         });
 };

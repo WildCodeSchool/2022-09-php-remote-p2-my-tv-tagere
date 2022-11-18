@@ -5,41 +5,42 @@
 
 
 {% block content %}
-	<body>
-		<main>
-			<h1>
-				{{serie.title}}
-			</h1>
+	<main class="seriePage position-relative">
+		<div class="imginfo">
 			<img src="/assets/images/shows/{{serie.image}}" alt="">
+		</div>
 
+		<article class="infogen"></p>
+		<h1>
+			{{serie.name}}
+			<a href="seriepage/edit?id={{serie.id}}" class="editSerie">
+				<i class="gg-pen"></i>
+			</a>
+		</h1>
+		<div class="infoSerieComp">
 			<p>
 				{% for tag in serie.styleTags %}
 					{{tag.name}},
 				{% endfor %}
+
+				<h2>Synopsis</h2>
+			</p>
+			<p>
+				{{serie.description}}
 			</p>
 
-			<article>
-				<h2>Synopsis</h2>
-				<p>
-					{{serie.description}}
-					<br></p>
+			<p>Année de première diffusion :
+				{{serie.year}}
+			</p>
 
-				<p>Année de première diffusion :
-					{{serie.year}}
-					<br></p>
-
-				<p>Nombre de saisons :
-					{{serie.nb_of_seasons}}</p>
-
-			</article>
-            <div>
-            <p>Vous voyez une erreur ?</p>
-            <a class="navbar-brand" href="seriepage/edit?id={{serie.id}}">
-		<button>Modifier les données</button>
-	</a>
-    </div>
-
-		</main>
-
-	</body>
-{% endblock %}
+			<p>Nombre de saisons :
+				{{serie.nb_of_seasons}}</p>
+		</div>
+		<div class="modify">
+			<p>Vous voyez une erreur ?</p>
+			<a class="navbar-brand" href="seriepage/edit?id={{serie.id}}">
+				<button>Modifier les données</button>
+			</a>
+		</div>
+	</article>
+</main>{% endblock %}
