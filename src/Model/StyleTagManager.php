@@ -66,7 +66,8 @@ class StyleTagManager extends AbstractManager
                 JOIN style_tag s_t ON s_s_t.style_tag_id = s_t.id
                 JOIN user_serie u_s ON u_s.serie_id = s.id
                 WHERE u_s.user_id=1
-                GROUP BY s_t.id ORDER BY COUNT(s.id) DESC)");
+                GROUP BY s_t.id ORDER BY COUNT(s.id) DESC)
+                LIMIT 4");
 
         return $statement->fetchAll();
     }
