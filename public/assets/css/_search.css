@@ -47,7 +47,6 @@
     }
 }
 
-
 .research li img:first-of-type,
 .etagere li img:first-of-type {
     width: 100%;
@@ -85,4 +84,8 @@
 h3.card-title {
     text-align: left;
     font-size: 100%;
+}
+
+.etagere progress {
+    width: 20%
 }

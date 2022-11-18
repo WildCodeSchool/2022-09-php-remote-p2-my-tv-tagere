@@ -34,7 +34,6 @@ class StyleTagManager extends AbstractManager
                 LIMIT 4;");
             $statement->bindValue('user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
             $statement->execute();
-
             $mostUsedTag['series'] = $statement->fetchAll(\PDO::FETCH_ASSOC);
         }
 
