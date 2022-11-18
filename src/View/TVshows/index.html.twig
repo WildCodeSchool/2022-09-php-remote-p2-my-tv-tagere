@@ -4,9 +4,24 @@
 {% endblock %}
 
 {% block content %}
-	<main class="TVshows">
-		<h1>Qu'allons nous regarder aujourd'hui {{user.firstname}} ?</h1>
 
+	<main class="TVshows">
+		<h1>Qu'allons nous regarder aujourd'hui, {{user.firstname}}?</h1>
+		<h2>Nos recommandations pour vous</h2>
+		<section>
+			<ul class="carousel-series">
+				{% for serie in seriesRecoms %}
+					<li class="carousel-serie">
+						<a href="/seriepage?id={{serie.id}}">
+							<img src="/assets/images/shows/{{serie.image}}"/></a>
+						<div class="card-content">
+							<h3 class="card-title">{{serie.name}}</h3>
+							<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</section>
 		{% for tag in seriesByTag %}
 			<h2>{{tag.tagName}}</h2>
 			<section class="carouselSerie">
