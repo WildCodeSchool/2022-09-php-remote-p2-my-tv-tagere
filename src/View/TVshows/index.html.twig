@@ -7,10 +7,12 @@
 
 	<main class="TVshows">
 		<h1>Qu'allons nous regarder aujourd'hui, {{user.firstname}}?</h1>
-		<h2>Nos recommandations pour vous</h2>
-		<section>
+            {{ dump(seriesRecoms) }}
+        {% if seriesRecoms %}
+        <div>
+            <h2>Nos recommandations pour vous</h2>
 			<ul class="carousel-series">
-				{% for serie in seriesRecoms %}
+            {% for serie in seriesRecoms %}
 					<li class="carousel-serie">
 						<a href="/seriepage?id={{serie.id}}">
 							<img src="/assets/images/shows/{{serie.image}}"/></a>
@@ -20,8 +22,9 @@
 						</div>
 					</li>
 				{% endfor %}
-			</ul>
-		</section>
+            </ul>
+        </div>
+        {% endif %}
 		{% for tag in seriesByTag %}
 			<h2>{{tag.tagName}}</h2>
 			<section class="carouselSerie">
