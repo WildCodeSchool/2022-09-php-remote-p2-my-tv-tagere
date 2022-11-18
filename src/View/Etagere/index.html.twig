@@ -6,48 +6,51 @@
 		<h1 class="titleAddserie">Ajouter votre série</h1>
 		<section>
 			{% for error in errors %}{% endfor %}
+			<pre>
+                {{ dump(favSeries) }}
+            </pre>
 			<section class="carouselSerie">
 				<ul class="carousel-series">
 					{% for serie in favSeries %}
-                    <pre>
-                        {{ dump(serie) }}
-                        {{ dump (post)}}
-                        {{ dump(seasonUpdate)}}
-                        {{ dump(serie.serie.fav) }}
+						<pre>
+                            {{ dump(serie) }}
+                            {# {{ dump (post)}}
+                            {{ dump(seasonUpdate)}}
+                            {{ dump(serie.serie.fav) }} #}
 
-                    </pre>
+                        </pre>
 						<li class="carousel-serie">
-							<a href="/seriepage?id={{serie.id}}">
-								<img src="/assets/images/shows/{{serie.serie.image}}"/>
-							</a>
-							<div class="card-content">
-								<h3 class="card-title">{{serie.serie.name}}</h3>
-								<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
-							</div>
+							{# <a href="/seriepage?id={{serie.id}}">
+                            <img src="/assets/images/shows/{{serie.serie.image}}"/>
+                        </a> #}
+{# <div class="card-content">
+                            <h3 class="card-title">{{serie.serie.name}}</h3>
+                            <a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
+                        </div> #}
                             <div class="container">
-                            <div class="progress mb-3">
+                                <div class="progress mb-3">
 
-                <div class="progress-bar" style = "width: {{(serie.serie.seen / serie.serie.totseasons) * 100}}%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ ((serie.serie.seen / serie.serie.totseasons) * 100) | round(0, 'floor') }}%</div>
-            </div>
+                                    <div class="progress-bar" style="width: {{(serie.serie.seen / serie.serie.totseasons) * 100}}%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    {{ ((serie.serie.seen / serie.serie.totseasons) * 100) | round(0, 'floor') }}%
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                            <form action="" method="POST">
-                            <label for="updateseenseasons{{serie.serie.fav}}">Saisons vues</label>
-                            <select name="updateseenseasons{{serie.serie.fav}}" id="updateseenseasons">
-                            {% set number = 0 %}
-                            <option id="{{number}}" name="{{number}}" value="{{number}}">Pas vu</option>
-                            {% for saison in 1.. serie.serie.totseasons %}
-                            {% set number = number + 1 %}
-                            <option id="{{number}}" name="{{number}}" value="{{number}}">Saison {{number}}</option>
-                            {% endfor %}
-                            </select>
-                            </div>
-                            <div>
-                    <a class="navbar-brand" href="etagere/edit?id={{serie.serie.fav}}"><button>Mettre à jour</button></a>
-				</div>
 
-
-                            </form>
+							<form action="" method="POST">
+                                <input type="hidden" name="serie" value="{{serie.id}}">
+								<label for="update-seen-seasons-{{serie.id}}">Saisons vues</label>
+								<select name="seen" id="update-seen-seasons-{{serie.id}}">
+									<option value="0">Pas vu</option>
+									{% for number in 1..serie.serie.totseasons %}
+										<option value="{{number}}" {{ number == serie.serie.seen ? 'selected' }}>
+                                        Saison {{number}}
+                                        </option>
+									{% endfor %}
+								</select>
+								<div>
+                                    <button>Mettre à jour</button>
+								</div>
+							</form>
 						</li>
 					{% endfor %}
 				</ul>
