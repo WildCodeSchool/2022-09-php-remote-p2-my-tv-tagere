@@ -22,6 +22,5 @@ return [
     'seriepage' => ['SeriePageController', 'index', ['id']],
     'seriepage/edit' => ['SeriePageController', 'edit', ['id']],
     'etagere' => ['EtagereController', 'index',],
-    'etagere/edit' => ['EtagereController', 'edit',['id']],
     'search' => ['ResearchController', 'getResearch', ['research']],
 ];

@@ -107,6 +107,3 @@ VALUES (1,2),
 (15,4),
 (16,1),
 (16,3);
-
-WHERE
- user_id=:user_is 

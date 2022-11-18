@@ -46,8 +46,6 @@ class UserSerieManager extends AbstractManager
         $statement->bindValue(':id', $favId, \PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetch();
-
-
     }
 
     public function favoritesSeriesById()
@@ -72,9 +70,4 @@ class UserSerieManager extends AbstractManager
 
         return $statement->execute();
     }
-
-
-
-
-
 }
