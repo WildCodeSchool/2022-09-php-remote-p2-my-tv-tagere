@@ -66,8 +66,8 @@ class UserSerieManager extends AbstractManager
         WHERE user_id = :user_id AND serie_id = :serie_id ");
 
         $statement->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
-        $statement->bindValue(':serie_id', $seasonUpdate['serie_id'], PDO::PARAM_INT);
-        $statement->bindValue(':seenSeasons', $seasonUpdate['updateseenseasons'], PDO::PARAM_INT);
+        $statement->bindValue(':serie_id', $seasonUpdate['serie'], PDO::PARAM_INT);
+        $statement->bindValue(':seenSeasons', $seasonUpdate['seen'], PDO::PARAM_INT);
 
 
         return $statement->execute();
