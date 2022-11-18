@@ -9,11 +9,6 @@
 			<section class="carouselSerie">
 				<ul class="carousel-series">
 					{% for serie in favSeries %}
-						<pre>
-                            {{ dump(favSeries) }}
-
-
-                        </pre>
 						<li class="carousel-serie">
 							{<a href="/seriepage?id={{serie.id}}">
                             <img src="/assets/images/shows/{{serie.serie.image}}"/>
