@@ -39,6 +39,7 @@
     }
 }
 
+
 .research li img:first-of-type,
 .etagere li img:first-of-type {
     width: 100%;
@@ -52,6 +53,7 @@
     width: 2rem;
     height: 2rem;
     object-fit: contain;
+    pointer-events: none;
 }
 
 .research .card-content,
@@ -66,9 +68,7 @@
 }
 
 .research .card-content .button,
-.research .card-content .a,
-.etagere .card-content .button,
-.etagere .card-content .a {
+.research .card-content .a {
     border: 1px solid #F5F5F5;
     color: #F5F5F5;
     padding: .3rem;
