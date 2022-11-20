@@ -86,3 +86,7 @@ h3.card-title {
     text-align: left;
     font-size: 100%;
 }
+
+.serieList{
+    background-color: var(--linear-color);
+}

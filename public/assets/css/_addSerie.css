@@ -2,10 +2,10 @@
     justify-content: center;
     margin: 0 10vw;
     padding-top: calc(var(--spacing)*12.5);
-    border: 6px solid var(--linear-color);
+    border: 6px solid var(--button-color);
     border-radius: calc(var(--spacing)*1.5);
     padding: calc(var(--spacing)*2);
-    background-color:rgba(254, 251, 172, 0.3);
+    background-color:rgba(240, 208, 172, 0.3);
     font-size: large;
 
 }
@@ -80,6 +80,7 @@ textarea {
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
     border-radius: calc(var(--spacing)*1.5);
     transition: .3s ease-in-out;
+    background-color: rgba(253, 238, 202, 1);
 }
 
 @media screen and (max-width: 768px) {}

@@ -4,7 +4,7 @@
     border: 6px solid var(--button-color);
     border-radius: calc(var(--spacing)*1.5);
     padding: var(--spacing-gap);
-    background-color: rgba(44, 88, 103, 0.4);
+    background-color: rgba(252, 227, 157, 0.4);
 }
 
 .connect .div-two {
