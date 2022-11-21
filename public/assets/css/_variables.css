@@ -1,17 +1,18 @@
 :root {
     /*** Colors Variables ***/
-    --main-color: rgb(224, 224, 252);
-    --second-color: #fff4cd;
-    --third-color: #292929;
-    --button-color: rgba(44, 88, 103, 0.7);
-    --button-color-hover: rgba(44, 88, 103, 1);
+    --main-color: #ffd469;
+    --button-color: #ffda8a;
+    --button-color-hover: #ffbe5c;
 
     /*** Font Color ***/
-    --font-color1: rgb(224, 224, 252);
+    --font-color1: #ab8246;
+    --font-color2:#FFF8E8;
 
     /* Couleur nav ,background, footer */
 
-    --linear-color: linear-gradient(92.7deg, #1D4350 8.5%, #A43931 90.2%);
+    --linear-color: #fdeeca;
+    --background-color: #FFF8E8;
+    --footer-color:#cba05f;
 
 
     /*spacing variables*/

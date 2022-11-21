@@ -1,17 +1,17 @@
 .connect .container-connect {
-    margin: 1rem auto;
+    margin: var(--spacing-gap) auto;
     width: clamp(10rem, 80vw, 60rem);
     border: 6px solid var(--button-color);
-    border-radius: 12px;
-    padding: 1rem;
-    background-color: rgba(44, 88, 103, 0.4);
+    border-radius: calc(var(--spacing)*1.5);
+    padding: var(--spacing-gap);
+    background-color: rgba(252, 227, 157, 0.4);
 }
 
 .connect .div-two {
     display: flex;
     flex-direction: column;
     padding: 1rem 3em;
-    gap: 3px;
+    gap: calc(var(--spacing)/2.66);
 }
 
 .connect .btn {
@@ -24,5 +24,5 @@
 }
 
 .connect input {
-    padding: .5rem;
+    padding: calc(var(--spacing-gap)/2);
 }

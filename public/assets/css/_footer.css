@@ -1,17 +1,17 @@
 /* Cosmétique Footer */
 footer {
     margin-top: auto;
-    background: (var(--linear-color));
-    background-color: rgba(48, 65, 79);
-    padding: 0.5rem;
+    background: var(--footer-color)!important;
+    
+    padding: var(--spacing);
     justify-content: space-around;
 }
 
 .text-decoration-none {
-    color: var(--font-color1) !important;
+    color: var(--font-color2) !important;
 }
 
 /* Underline Déco */
 .text-decoration-none:hover {
-    color: var(--main-color) !important;
+    color: var(--button-color) !important;
 }

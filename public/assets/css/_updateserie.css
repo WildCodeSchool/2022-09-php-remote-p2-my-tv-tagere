@@ -16,28 +16,32 @@
 
 .serieEdit {
     flex: 1;
+    
 
 }
 
 .formUpdate {
     position: relative;
     /* justify-content: center; */
-    margin: 4rem auto;
+    margin: calc(var(--spacing-gap)*4) auto;
     width: clamp(10rem, 80vw, 60rem);
     border: 6px solid var(--button-color);
-    border-radius: 12px;
-    padding: 1rem;
-    background-color: rgba(44, 88, 103, 0.4);
+    border-radius: calc(var(--spacing)*1.5);
+    padding: var(--spacing-gap);
+    background-color: rgba(255, 236, 159, 0.4);
+    color: var(--font-color2);
 }
 
 .serieEdit h1 {
     text-align: center;
+    color: var(--font-color2);
+
 }
 
 .serieEdit form div {
-    margin: .5rem;
+    margin: calc(var(--spacing-gap)/2);
 }
 
 .serieEdit form textarea {
-    padding: .5rem;
+    padding: calc(var(--spacing-gap)/2);
 }

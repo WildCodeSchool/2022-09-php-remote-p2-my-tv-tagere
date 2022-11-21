@@ -2,20 +2,20 @@ nav {
     opacity: 1;
     transition: .5s;
     background: var(--linear-color);
-    height: 6rem;
+    height: calc(var(--spacing)*12);
     justify-content: space-between;
     align-items: center;
 }
 
 nav .navbar-toggler {
-    margin-right: 1rem;
+    margin-right: var(--spacing-gap);
 }
 
 nav img {
     object-fit: contain;
     height: 80%;
     width: auto;
-    margin-left: .5rem;
+    margin-left: calc(var(--spacing-gap)/2);
 }
 
 nav ul {
@@ -34,40 +34,43 @@ nav a {
 nav ul li {
     color: var(--font-color1);
     background: var(--button-color-hover);
-    padding: 1rem;
+    padding: var(--spacing-gap);
     width: 100%
 }
 
 @media screen and (min-width:992px) {
     nav ul {
-        gap: 1rem;
-        margin-right: .5rem;
+        gap: var(--spacing-gap);
+        margin-right: calc(var(--spacing-gap)/2);
     }
 
     nav ul li {
         background: var(--button-color);
         width: initial;
-        border-radius: 12px;
+        border-radius: calc(var(--spacing)*1.5);
     }
 }
 
 
 nav ul li.deco {
-    background-color: var(--third-color);
+    background-color: var(--button-color);
 }
 
 nav .dropdown-toggle {
     color: var(--font-color1);
-    border-radius: 12px;
+    border-radius: calc(var(--spacing)*1.5);
     background: var(--button-color);
-    padding: 1rem;
+    padding: var(--spacing-gap);
 }
 
 nav ul li:hover {
     transition: 0.4s;
     background-color: var(--button-color-hover);
+    
 }
-
+.navbar-nav:hover{
+    color:var(--font-color2)!important;
+}
 .navbar-brand {
     height: 100%;
 }
@@ -88,7 +91,7 @@ nav ul li:hover {
     }
 
     .navbar input {
-        height: 3rem;
+        height: calc(var(--spacing-gap)*3);
     }
 
     .navbar .formSearch {
@@ -97,9 +100,9 @@ nav ul li:hover {
 }
 
 .navbar button.btn {
-    margin-top: .5rem;
+    margin-top: calc(var(--spacing-gap)/2);
     width: 100%;
-    border-radius: 12px;
+    border-radius: calc(var(--spacing)*1.5);
     border: 1px solid var(--font-color1);
     color: var(--font-color1);
     text-align: center;
@@ -112,7 +115,7 @@ nav ul li:hover {
     .navbar button.btn {
         width: inherit;
         margin-top: 0;
-        height: 3rem;
+        height: calc(var(--spacing-gap)*3);
     }
 
     nav.scrolled {
