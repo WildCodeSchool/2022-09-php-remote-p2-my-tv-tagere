@@ -1,7 +1,6 @@
 .addForm {
     justify-content: center;
-    max-width: 50%;
-    margin: 0 auto;
+    margin: 0 10vw;
     padding-top: 100px;
     border: 6px solid rgb(92, 88, 115);
     border-radius: 12px;
@@ -13,6 +12,22 @@
 
 .inputGroupFileAddon04 {
     justify-content: flex-end;
+}
+
+.addSearch {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .375rem;
+    transition: border-color .15s
 }
 
 main.addSerie {
@@ -29,25 +44,32 @@ main.addSerie {
 
 textarea {
     width: 100%;
+    border-radius: .375rem;
 }
 
 .addSerie ul.carousel-series {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     list-style: none;
-    margin: 0 1rem;
+    margin: 1rem;
     padding-left: 0;
-    margin: 3px solid red;
 }
 
 @media screen and (min-width: 768px) {
+    .addSerie ul.carousel-series {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 960px) {
     .addSerie ul.carousel-series {
         grid-template-columns: repeat(5, 1fr);
     }
 }
 
 .addSerie li.carousel-serie {
+    display: none;
     overflow: auto;
     height: 12rem;
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
@@ -55,29 +77,24 @@ textarea {
     transition: .3s ease-in-out;
 }
 
-.addSerie ul.carousel-series {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0 1rem;
-    padding-left: 0;
-    margin: 3px solid red;
+@media screen and (max-width: 768px) {}
+
+.addSerie li.carousel-serie:nth-child(-n+4) {
+    display: initial;
 }
 
 @media screen and (min-width: 768px) {
-    .addSerie ul.carousel-series {
-        grid-template-columns: repeat(5, 1fr);
+    .addSerie li.carousel-serie:nth-child(-n+6) {
+        display: initial;
     }
 }
 
-.addSerie li.carousel-serie {
-    overflow: auto;
-    height: 12rem;
-    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    transition: .3s ease-in-out;
+@media screen and (min-width: 960px) {
+    .addSerie li.carousel-serie {
+        display: initial;
+    }
 }
+
 
 .addSerie li img:first-of-type {
     width: 100%;
@@ -95,8 +112,8 @@ textarea {
 .addSerie .card-content {
     display: flex;
     justify-content: space-between;
+    background-color: var(--third-color);
     align-items: center;
-    background-color: #3B0208;
     text-align: center;
     color: #fff;
     height: 30%;
@@ -115,30 +132,6 @@ textarea {
     font-size: 1rem !important;
 }
 
-.addSerie li img:first-of-type {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-    object-position: center center;
-}
-
-.addSerie li img.favorite {
-    width: 2rem;
-    height: 2rem;
-    object-fit: contain;
-}
-
-.addSerie .card-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3B0208;
-    text-align: center;
-    color: #fff;
-    height: 30%;
-    padding: 1rem;
-}
-
 .addSerie .card-content .button,
 .addSerie .card-content .a {
     border: 1px solid #F5F5F5;
@@ -146,7 +139,11 @@ textarea {
     padding: .3rem;
 }
 
-.addSerie .h3 {
-    color: #fff;
-    font-size: 1rem !important;
+.addSerie .btn {
+    color: white;
+    margin: .5rem auto;
+}
+
+#serieSearchButton {
+    padding: .5rem .75rem;
 }

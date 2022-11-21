@@ -14,7 +14,11 @@ class EtagereController extends AbstractController
 
         $serieManager = new SerieManager();
         $favSeries = $serieManager->createCards($displayFavSeries);
-
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $seasonUpdate = array_map('trim', $_POST);
+            $etagereModel->update($seasonUpdate);
+            header('Location: /etagere');
+        }
         return $this->twig->render(
             'Etagere/index.html.twig',
             ['favSeries' => $favSeries]

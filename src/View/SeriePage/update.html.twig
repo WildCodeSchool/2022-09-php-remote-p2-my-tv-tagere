@@ -1,35 +1,37 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %} Mettre à jour la série{% endblock %}
-
+{% block title %}
+	Mettre à jour la série
+{% endblock %}
 
 {% block content %}
-<header class="TVshowsHeader"></header>
-	<main>
-    <img src="/assets/images/shows/{{serie.image}}" alt="">
-	<h1 class="titleAddserie">Modifier la série</h1>
-
-		<section>
-			<form class="addForm" method="post" action='' enctype="multipart/form-data">
+	<main class="serieEdit position-relative">
+		<div class="imgupdate">
+			<img src="/assets/images/shows/{{serie.image}}" alt="">
+		</div>
+		<section class="formUpdate">
+			<h1>Modifier la série</h1>
+			<form method="post" action='' enctype="multipart/form-data">
 				<div>
 					<label for="serieName">Nom série:</label><br/>
-					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example" value = "{{serie.name}}">
+					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example" value="{{serie.name}}" required>
 				</div>
 
 				<div>
-					<label for="nbOfSeasons">Date de diffusion:</label><br/>
-					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example" value ="{{serie.year}}">
+					<label for="nbOfSeasons">Nombre de saisons</label><br/>
+					<input class="form-control" type="text" id="nbOfSeasons" name="nbOfSeasons" aria-label="default input example" value="{{serie.nb_of_seasons}}" required>
 				</div>
 				<div>
-					<label for="year">Nombre de saisons</label><br/>
-					<input class="form-control" type="text" id="year" name="year" aria-label="default input example" value ="{{serie.nb_of_seasons}}">
+					<label for="year">Date de diffusion</label><br/>
+					<input class="form-control" type="number" id="year" name="year" aria-label="default input example" value="{{serie.year}}" required>
 				</div>
 				<div>
 					<label for="description">Description</label><br/>
-					<textarea id="description" name="description" cols="100">{{serie.description}}</textarea>
+					<textarea id="description" name="description" cols="100">{{serie.description}}
+					</textarea>
 				</div>
-				<div>
-					<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Mettre à jour la série">
+				<div class="connect">
+					<input class="btn" type="submit" id="inputGroupFileAddon04" value="Mettre à jour la série">
 				</div>
 			</form>
 		</section>

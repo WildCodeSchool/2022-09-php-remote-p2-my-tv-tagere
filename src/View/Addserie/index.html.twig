@@ -3,7 +3,6 @@
 {% endblock %}
 
 {% block content %}
-	<header class="TVshowsHeader"></header>
 	<main class="addSerie">
 		<h1 class="titleAddserie">Ajouter votre série</h1>
 		{% for error in errors %}
@@ -13,14 +12,18 @@
 		{% endfor %}
 		<section>
 			<p>Recherchez votre serie ou ajoutez la manuellement</p>
-			<input type="text" id="serieSearch" name="serieSearch" value="" required>
-			<button id="serieSearchButton">
-				Recherche !</button>
+			<div class="connect">
+				<input class="addSearch" type="text" id="serieSearch" name="serieSearch" value="" required>
+				<button id="serieSearchButton" class="btn">
+					Recherche !</button>
+			</div>
 			<div class="fetchedSeries"></div>
+
 		</section>
 		<section>
 			<form class="addForm" action="/addserie" method="post" enctype="multipart/form-data">
-				<div>
+				<div class="div-twomb-3d-flexjustify-content-center">
+
 					<label for="serieName">Nom série:</label><br/>
 					<input class="form-control" type="text" id="serieName" name="serieName" aria-label="default input example" required>
 				</div>
@@ -49,7 +52,7 @@
 				<div class="input-group">
 					<input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
 				</div>
-				<div>
+				<div class="connect">
 					<input class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" value="Ajout">
 				</div>
 			</form>

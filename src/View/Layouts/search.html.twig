@@ -5,12 +5,16 @@
 
 	<main class="research">
 		{% if searchResults == NULL %}
-			Aucun résultat pour votre recherche...
+			<p>
+				Aucun résultat pour votre recherche...
+				<a href="addserie">Ajoutez votre série !</a>
+			</p>
+
 		{% else %}
-			<section class="carouselSerie">
-				<ul class="carousel-series">
+			<section>
+				<ul class="serieList">
 					{% for serie in searchResults %}
-						<li class="carousel-serie">
+						<li class="cardSerie">
 							<a href="/seriepage?id={{serie.id}}">
 								<img src="/assets/images/shows/{{serie.serie.image}}"/>
 							</a>
@@ -22,7 +26,13 @@
 					{% endfor %}
 				</ul>
 			</section>
+			<p>
+				Votre série n'est pas là ?
+				<a href="addserie">Ajoutez là !</a>
+			</p>
 		{% endif %}
 	</main>
 {% endblock %}
-{% block javascript %}{% endblock %}
+{% block javascript %}
+	<script src="/assets/scripts/ajaxRequest.js"></script>
+{% endblock %}
