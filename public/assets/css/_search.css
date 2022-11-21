@@ -60,6 +60,7 @@
     width: calc(var(--spacing-gap)*2);
     height: calc(var(--spacing-gap)*2);
     object-fit: contain;
+    pointer-events: none;
 }
 
 .research .card-content,
@@ -74,9 +75,7 @@
 }
 
 .research .card-content .button,
-.research .card-content .a,
-.etagere .card-content .button,
-.etagere .card-content .a {
+.research .card-content .a {
     border: 1px solid #F5F5F5;
     color: #F5F5F5;
     padding: calc(var(--spacing-gap)/3.33);
@@ -85,6 +84,10 @@
 h3.card-title {
     text-align: left;
     font-size: 100%;
+}
+
+.etagere progress {
+    width: 20%
 }
 
 .serieList{

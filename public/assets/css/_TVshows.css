@@ -69,6 +69,7 @@
     width: calc(var(--spacing-gap)*2);
     height:calc(var(--spacing-gap)*2);
     object-fit: contain;
+    pointer-events: none;
 }
 
 .TVshows .card-content {
