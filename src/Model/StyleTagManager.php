@@ -40,19 +40,6 @@ class StyleTagManager extends AbstractManager
         return $mostUsedTags;
     }
 
-    // //Récupération des tags favoris d'un utilisateur
-    // public function getNumSeriesBytags(): array
-    // {
-    //     $statement = $this->pdo->query("SELECT s_t.id, COUNT(s.id) as numSerie, s_t.name FROM serie s
-    //         JOIN serie_style_tag s_s_t ON s_s_t.serie_id=s.id
-    //         JOIN style_tag s_t ON s_s_t.style_tag_id = s_t.id
-    //         JOIN user_serie u_s ON u_s.serie_id = s.id
-    //         GROUP BY s_t.id ORDER BY numSerie DESC");
-
-    //     $numSeriesByTags = $statement->fetchAll();
-    //     return $numSeriesByTags;
-    // }
-
     //Récupération des séries non visionnées par tags favoris
     public function getMostUsedFavs(): array
     {
