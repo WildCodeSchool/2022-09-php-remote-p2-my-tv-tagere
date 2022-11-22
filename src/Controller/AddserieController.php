@@ -44,6 +44,7 @@ class AddserieController extends AbstractController
                         $serieStyleManager->insertTagsBySerieId(intval($styleTag), intval($lastSerieId));
                     }
                 }
+                header("location: /seriepage?id=$lastSerieId");
             }
         }
 
