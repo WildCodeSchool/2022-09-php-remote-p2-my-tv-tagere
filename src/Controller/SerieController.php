@@ -16,8 +16,17 @@ class SerieController extends AbstractController
             header('HTTP/1.1 401 Unauthorized');
         } else {
             $styleTagManager = new StyleTagManager();
+            $styleTagManager->getFirstSeriesByTag();
+            // $styleTagManager->getNumSeriesBytags();
+            $styleTagManager->getMostUsedFavs();
+
             $seriesByTag = $styleTagManager->getFirstSeriesByTag();
-            return $this->twig->render('TVshows/index.html.twig', ['seriesByTag' => $seriesByTag]);
+            $seriesRecoms = $styleTagManager->getMostUsedFavs();
+
+            return $this->twig->render('TVshows/index.html.twig', [
+                'seriesByTag' => $seriesByTag,
+                'seriesRecoms' => $seriesRecoms
+            ]);
         }
     }
 }

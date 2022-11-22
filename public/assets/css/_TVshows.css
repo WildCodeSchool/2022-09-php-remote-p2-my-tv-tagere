@@ -1,10 +1,13 @@
 .TVshows h1 {
     text-align: center;
-    margin: 2rem;
+    margin: calc(var(--spacing-gap)*2);
+    color: var(--font-color1);
+
 }
 
 .TVshows h2 {
-    margin: 1rem 0 0 1rem;
+    margin: var(--spacing-gap) 0 0 var(--spacing-gap);
+    color: var(--font-color1);
 }
 
 /* Carousel*/
@@ -13,25 +16,34 @@
     display: flex;
     overflow: scroll;
     padding: 0rem 0 0;
-    height: 15rem;
-    background-color: rgba(57, 68, 72, 0.4);
+    height: calc(var(--spacing-gap)*15);
+    background-color: rgba(253, 238, 202, 1);
+    font-size: x-large;
 }
-
+.TVshows ul.carousel-serie-recom{
+    display: flex;
+    overflow: scroll;
+    padding: 0rem 0 0;
+    height: calc(var(--spacing-gap)*15);
+   background-color: rgb(255, 115, 0, 0.3);
+   font-size: x-large;
+}
 @media screen and (min-width: 768px) {
 
     .TVshows ul.carousel-series {
-        height: 20rem;
+        height: calc(var(--spacing-gap)*20);
     }
 }
 
 .TVshows li.carousel-serie {
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
+    border-radius: calc(var(--spacing)*1.5);
     list-style-type: none;
     min-width: 80vw;
     overflow: auto;
-    margin: 1.2rem 0 1rem 1rem;
+    margin: 1.2rem 0 var(--spacing-gap) var(--spacing-gap);
 }
+
 
 
 @media screen and (min-width: 768px) {
@@ -61,8 +73,8 @@
 }
 
 .TVshows li img.favorite {
-    width: 2rem;
-    height: 2rem;
+    width: calc(var(--spacing-gap)*2);
+    height: calc(var(--spacing-gap)*2);
     object-fit: contain;
     pointer-events: none;
 }
@@ -72,9 +84,9 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background: var(--third-color);
+    background: rgb(250, 224, 163);
     height: 20%;
-    padding: 1rem;
+    padding: var(--spacing-gap);
 }
 
 .TVshows .card-content .button,
@@ -93,7 +105,7 @@
 
 .TVshows ::-webkit-scrollbar {
     display: none;
-    height: 0.5rem;
+    height: calc(var(--spacing-gap)/2);
     background-color: #F5F5F5;
 }
 

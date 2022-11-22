@@ -1,11 +1,11 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light --bs-info">
 	{% if user %}
 		<a class="navbar-brand" href="series">
-			<img src="assets/images/MY.png">
+			<img src="/assets/images/MY.png">
 		</a>
 	{% else %}
 		<a class="navbar-brand" href="/">
-			<img src="assets/images/MY.png">
+			<img src="/assets/images/MY.png">
 		</a>
 	{% endif %}
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,13 +16,13 @@
 			{% if user %}
 
 				<li class="full">
-					<a href="series">Accueil</a>
+					<a href="/series">Accueil</a>
 				</li>
 				<li class="full">
-					<a href="etagere">Mon étagère</a>
+					<a href="/etagere">Mon étagère</a>
 				</li>
 				<li class="full">
-					<a href="addserie">Ajout Série</a>
+					<a href="/addserie">Ajout Série</a>
 				</li>
 				<li class="formSearch">
 					<form role="search" action="/search" method="GET">

@@ -1,54 +1,58 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+
+
 	<main class="etagere">
 		<h1>Bienvenue sur votre étagère !</h1>
 
-		<section>
-			{% for error in errors %}{% endfor %}
-			<section class="carouselSerie">
-				<ul class="carousel-series">
-					{% for serie in favSeries %}
-						<li class="carousel-serie">
-							<a href="/seriepage?id={{serie.id}}">
-                            <img src="/assets/images/shows/{{serie.serie.image}}"/>
-                        </a>
-                         <div class="card-content">
-                            <h3 class="card-title">{{serie.serie.name}}</h3>
-                            <a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
-                        </div>
-                            <div class="container">
-                                <div class="progress mb-3">
+		{% if favSeries is empty %}
 
-                                    <div class="progress-bar" style="width: {{(serie.serie.seen / serie.serie.totseasons) * 100}}%" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    {{ ((serie.serie.seen / serie.serie.totseasons) * 100) | round(0, 'floor') }}%
-                                    </div>
-                                </div>
-                            </div>
+			<p>
+				Vous devez ajouter au moins une série en favoris !</p>
 
-							<form action="" method="POST">
-                                <input type="hidden" name="serie" value="{{serie.id}}">
-								<label for="update-seen-seasons-{{serie.id}}">Saisons vues</label>
-								<select name="seen" id="update-seen-seasons-{{serie.id}}">
-									<option value="0">Pas vu</option>
-									{% for number in 1..serie.serie.totseasons %}
-										<option value="{{number}}" {{ number == serie.serie.seen ? 'selected' }}>
-                                        Saison {{number}}
-                                        </option>
-									{% endfor %}
-								</select>
-								<div>
-                                    <button>Mettre à jour</button>
+
+		{% else %}
+			<ul class="serieList">
+				{% for serie in favSeries %}
+
+					<li class="cardSerie">
+						<a href="/seriepage?id={{serie.id}}"><img src="/assets/images/shows/{{serie.serie.image}}"/></a>
+						<div class="card-content">
+							<h3 class="card-title">{{serie.serie.name}}</h3>
+							<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
+							{# <span>{{ ((serie.serie.seen / serie.serie.totseasons) * 100)| round }}%
+																																									<progress id="test" max="{{serie.serie.totseasons * 100}} " value="{{serie.serie.seen}}">
+																																			                        </span> #}
+
+							<div class="container">
+								<div class="progress mb-1" data-progess-container-id="{{serie.id}}">
+									{% include "/Etagere/_progressBar.html.twig" with {serie_id: serie.id, seen: serie.serie.seen, totseasons: serie.serie.totseasons} %}
 								</div>
-							</form>
-						</li>
-					{% endfor %}
-				</ul>
-			</section>
+								<form action="" method="POST">
+									<input type="hidden" name="serie" value="{{serie.id}}">
+									<label for="update-seen-seasons-{{serie.id}}">Saisons vues</label>
+									<select name="seen" id="update-seen-seasons" data-id="{{serie.id}}">
+										<option value="0">Pas vu</option>
+										{% for number in 1..serie.serie.totseasons %}
+											<option value="{{number}}" {{ number == serie.serie.seen ? 'selected' }}>
+												Saison
+												{{number}}
+											</option>
+										{% endfor %}
+									</select>
+								</form>
+							</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
 
-		</section>
+		{% endif %}
+
 	</main>
 {% endblock %}
 {% block javascript %}
 	<script src="/assets/scripts/ajaxRequest.js"></script>
+	<script src="/assets/scripts/progSerie.js"></script>
 {% endblock %}
