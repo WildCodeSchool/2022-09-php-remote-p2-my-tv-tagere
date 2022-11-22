@@ -2,8 +2,7 @@
     text-align: center;
     margin: calc(var(--spacing-gap)*2);
     color: var(--font-color1);
-    text-decoration: underline;
-    
+
 }
 
 .TVshows h2 {
@@ -21,7 +20,14 @@
     background-color: rgba(253, 238, 202, 1);
     font-size: x-large;
 }
-
+.TVshows ul.carousel-serie-recom{
+    display: flex;
+    overflow: scroll;
+    padding: 0rem 0 0;
+    height: calc(var(--spacing-gap)*15);
+   background-color: rgb(255, 115, 0, 0.3);
+   font-size: x-large;
+}
 @media screen and (min-width: 768px) {
 
     .TVshows ul.carousel-series {
@@ -37,6 +43,7 @@
     overflow: auto;
     margin: 1.2rem 0 var(--spacing-gap) var(--spacing-gap);
 }
+
 
 
 @media screen and (min-width: 768px) {
@@ -67,7 +74,7 @@
 
 .TVshows li img.favorite {
     width: calc(var(--spacing-gap)*2);
-    height:calc(var(--spacing-gap)*2);
+    height: calc(var(--spacing-gap)*2);
     object-fit: contain;
     pointer-events: none;
 }
@@ -77,7 +84,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background:rgb(250, 224, 163) ;
+    background: rgb(250, 224, 163);
     height: 20%;
     padding: var(--spacing-gap);
 }

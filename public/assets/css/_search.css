@@ -9,7 +9,9 @@
     text-align: center;
     margin: calc(var(--spacing-gap)*2);
 }
-
+.etagere  p:first-of-type{
+text-align: center;
+}
 .research ul.serieList,
 .etagere ul.serieList {
     display: grid;
@@ -93,3 +95,4 @@ h3.card-title {
 .serieList{
     background-color: var(--linear-color);
 }
+
