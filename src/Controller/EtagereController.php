@@ -24,4 +24,18 @@ class EtagereController extends AbstractController
             ['favSeries' => $favSeries]
         );
     }
+
+    public function indexAjax($serie, $seen)
+    {
+        $userSerieManager = new UserSerieManager();
+        $seasonUpdate = ['serie' => $serie, 'seen' => $seen];
+        $idSerie = $userSerieManager->update($seasonUpdate);
+        $serieManager = new SerieManager();
+        $serieInfo = $serieManager->selectOneById($serie);
+        return $this->twig->render('Etagere/_progressBar.html.twig', [
+            'serie_id' => $serie,
+            'seen' => $seen,
+            'totseasons' => $serieInfo['nb_of_seasons'],
+        ]);
+    }
 }
