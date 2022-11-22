@@ -29,7 +29,7 @@ class EtagereController extends AbstractController
     {
         $userSerieManager = new UserSerieManager();
         $seasonUpdate = ['serie' => $serie, 'seen' => $seen];
-        $idSerie = $userSerieManager->update($seasonUpdate);
+        $userSerieManager->update($seasonUpdate);
         $serieManager = new SerieManager();
         $serieInfo = $serieManager->selectOneById($serie);
         return $this->twig->render('Etagere/_progressBar.html.twig', [

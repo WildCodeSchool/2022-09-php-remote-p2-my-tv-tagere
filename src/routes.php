@@ -23,6 +23,6 @@ return [
     'seriepage' => ['SeriePageController', 'index', ['id']],
     'seriepage/edit' => ['SeriePageController', 'edit', ['id']],
     'etagere' => ['EtagereController', 'index',],
-    'etagere/indexAjax'=> ['EtagereController', 'indexAjax',['serie','seen']],
+    'etagere/indexAjax' => ['EtagereController', 'indexAjax',['serie','seen']],
     'search' => ['ResearchController', 'getResearch', ['research']],
 ];
