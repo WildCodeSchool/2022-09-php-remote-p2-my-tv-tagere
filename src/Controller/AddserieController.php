@@ -26,7 +26,7 @@ class AddserieController extends AbstractController
 
             $serie = array_map('trim', $serie);
 
-            $uploadDir = __DIR__ . '/../../public/assets/images/shows/';
+            $uploadDir = __DIR__ . '/../../public/uploads/';
             $uploadFile = $uploadDir . basename($_FILES['image']['name']);
 
             $serie['image'] = $_FILES['image']['name'];
