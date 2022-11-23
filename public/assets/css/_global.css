@@ -52,3 +52,8 @@ a:hover {
     border: 3px solid var(--button-color-hover);
     padding: .5rem;
 }
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
