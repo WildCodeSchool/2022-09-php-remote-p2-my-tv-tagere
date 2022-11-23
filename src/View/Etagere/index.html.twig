@@ -17,7 +17,7 @@
 				{% for serie in favSeries %}
 
 					<li class="cardSerie">
-						<a href="/seriepage?id={{serie.id}}"><img src="/assets/images/shows/{{serie.serie.image}}"/></a>
+						<a href="/seriepage?id={{serie.id}}"><img src="/uploads/{{serie.serie.image}}"/></a>
 						<div class="card-content">
 							<h3 class="card-title">{{serie.serie.name}}</h3>
 							<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
