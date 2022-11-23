@@ -9,7 +9,7 @@ class RegisterManager extends AbstractManager
     /**
      * Insert new item in database
      */
-    public function insert(array $user): void
+    public function insert(array $user): string
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
         " (lastname, firstname, birthdate, email, password)
@@ -20,6 +20,7 @@ class RegisterManager extends AbstractManager
         $statement->bindValue(':email', $user['email'], \PDO::PARAM_STR);
         $statement->bindValue(':password', password_hash($user['password'], PASSWORD_DEFAULT), \PDO::PARAM_STR);
         $statement->execute();
+        return $this->pdo->lastInsertId();
     }
 
     public function selectByOneByEmail(string $email): array|false

@@ -11,7 +11,5 @@ footer {
     color: var(--font-color2) !important;
 }
 
-/* Underline Déco */
-.text-decoration-none:hover {
-    color: var(--button-color) !important;
-}
+
+

@@ -17,14 +17,10 @@
 				{% for serie in favSeries %}
 
 					<li class="cardSerie">
-						<a href="/seriepage?id={{serie.id}}"><img src="/assets/images/shows/{{serie.serie.image}}"/></a>
+						<a href="/seriepage?id={{serie.id}}"><img src="/uploads/{{serie.serie.image}}"/></a>
 						<div class="card-content">
 							<h3 class="card-title">{{serie.serie.name}}</h3>
 							<a href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
-							{# <span>{{ ((serie.serie.seen / serie.serie.totseasons) * 100)| round }}%
-																																									<progress id="test" max="{{serie.serie.totseasons * 100}} " value="{{serie.serie.seen}}">
-																																			                        </span> #}
-
 							<div class="container">
 								<div class="progress mb-1" data-progess-container-id="{{serie.id}}">
 									{% include "/Etagere/_progressBar.html.twig" with {serie_id: serie.id, seen: serie.serie.seen, totseasons: serie.serie.totseasons} %}

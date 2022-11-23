@@ -10,11 +10,12 @@
 		{% if seriesRecoms %}
 			<div>
 				<h2>Nos recommandations pour vous</h2>
-				<ul class=" carousel-serie-recom">
+				<ul class="carousel-series carousel-serie-recom">
 					{% for serie in seriesRecoms %}
 						<li class="carousel-serie">
 							<a href="/seriepage?id={{serie.id}}">
-								<img src="/assets/images/shows/{{serie.image}}"/></a>
+								<img src="/uploads/{{serie.image}}"/></a>
+
 							<div class="card-content">
 								<h3 class="card-title">{{serie.serie_name}}</h3>
 								<a data-add-to-fav="{{serie.id}}" href="/series/addOrDeleteToUser?id={{serie.id}}"><img class="favorite" src={% if serie.fav == NULL %} "/assets/images/not_fav.svg" {% else %} "/assets/images/fav.svg" {% endif %}/></a>
@@ -31,7 +32,7 @@
 					{% for serie in tag.series %}
 						<li class="carousel-serie">
 							<a href="/seriepage?id={{serie.id}}">
-								<img src="/assets/images/shows/{{serie.image}}"/>
+								<img src="/uploads/{{serie.image}}"/>
 							</a>
 							<div class="card-content">
 								<h3 class="card-title">{{serie.name}}</h3>

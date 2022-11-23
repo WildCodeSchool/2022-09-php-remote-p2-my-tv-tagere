@@ -26,7 +26,7 @@ class AddserieController extends AbstractController
 
             $serie = array_map('trim', $serie);
 
-            $uploadDir = __DIR__ . '/../../public/assets/images/shows/';
+            $uploadDir = __DIR__ . '/../../public/uploads/';
             $uploadFile = $uploadDir . basename($_FILES['image']['name']);
 
             $serie['image'] = $_FILES['image']['name'];
@@ -44,6 +44,7 @@ class AddserieController extends AbstractController
                         $serieStyleManager->insertTagsBySerieId(intval($styleTag), intval($lastSerieId));
                     }
                 }
+                header("location: /seriepage?id=$lastSerieId");
             }
         }
 

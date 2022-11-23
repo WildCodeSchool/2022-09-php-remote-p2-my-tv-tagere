@@ -6,18 +6,18 @@
 {% block content %}
 	<main class="seriePage position-relative">
 		<div class="imginfo">
-			<img src="/assets/images/shows/{{serie.image}}" alt="">
+			<img src="/uploads/{{serie.image}}" alt="">
 		</div>
 
 		<article class="infogen"></p>
-        <div class = "h1update">
-		<h1>
-			{{serie.name}}
-			<a class="pen" href="seriepage/edit?id={{serie.id}}" class="editSerie">
-				<img src="/assets/images/pen2.png"/>
-			</a>
-		</h1>
-        </div>
+		<div class="h1update">
+			<h1>
+				{{serie.name}}
+				<a class="pen" href="seriepage/edit?id={{serie.id}}" class="editSerie">
+					<img src="/assets/images/pen2.png"/>
+				</a>
+			</h1>
+		</div>
 		<div class="infoSerieComp">
 			<p>
 				{% for tag in serie.styleTags %}
