@@ -37,9 +37,8 @@ function fetchSeries(serieSearch) {
 
             const cardContents = document.querySelectorAll('#cardContent');
             for (cardContent of cardContents) {
-                //console.log(buttonComplete.dataset.id);
-                cardContent.addEventListener('mouseenter', function (event) {
-                    //console.log(event.srcElement.dataset.id);
+                cardContent.style.cursor = "pointer";
+                cardContent.addEventListener('click', function (event) {
                     fetchOneSerie(event.srcElement.dataset.id);
                 });
             }

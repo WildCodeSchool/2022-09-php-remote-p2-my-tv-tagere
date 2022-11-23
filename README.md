@@ -1,4 +1,4 @@
-![Alt text](/public/assets/images/MY.png?raw=true "My-TV-Tagere") 
+![Alt text](/public/assets/images/MY.png?raw=true "My-TV-Tagere")
 
 # My-TV-tagère
 
@@ -38,8 +38,3 @@ If you want, some profiles are already added in the database :
 ## Known issues
 
 1. Card size in on last line of etagere page
-
-### Upcoming improvement
-
-1. When creating a new serie from API, the current behaviour is to add data in form on "mouseover" --> Changing to "onClick"
-2. When adding a serie --> You will soon be redirected on its serie detail page
