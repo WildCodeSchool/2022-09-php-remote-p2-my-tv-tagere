@@ -43,12 +43,12 @@ class SerieManager extends AbstractManager
         if (strlen($research) == 1) {
             $regex = ".*\\b[" . strtolower($research) . strtoupper($research) . "].*";
             $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
-                " WHERE name REGEXP :regex LIMIT 12");
+                " WHERE name REGEXP :regex LIMIT 200");
             $statement->bindValue(':regex', $regex, \PDO::PARAM_STR);
             $statement->execute();
         } else {
             $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE .
-                " WHERE name LIKE :research1 OR year= :research2 LIMIT 12");
+                " WHERE name LIKE :research1 OR year= :research2 LIMIT 200");
             $statement->bindValue(':research1', "%" . $research . "%", \PDO::PARAM_STR);
             $statement->bindValue(':research2', $intResearch, \PDO::PARAM_INT);
             $statement->execute();
