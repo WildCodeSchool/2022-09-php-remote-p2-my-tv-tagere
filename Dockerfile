@@ -1,24 +1,13 @@
 #
-# Stage 1 - Prep App's PHP Dependencies
+# Stage 1 - Composer
 #
-FROM composer:latest as vendor
-
-WORKDIR /app
-
-COPY composer.json composer.json
-
-RUN composer install \
-    --ignore-platform-reqs \
-    --no-interaction \
-    --no-plugins \
-    --no-scripts \
-    --prefer-dist \
-    --quiet
-
+FROM composer/composer:2-bin as composer
 
 # end Stage 1 #
 
-
+#
+# Stage 2 - Prep App's PHP Dependencies
+#
 FROM php:8.0-fpm-alpine as phpserver
 
 # add cli tools
@@ -36,8 +25,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 WORKDIR /var/www
 
 COPY . /var/www/
-COPY --from=vendor /app/vendor/ /var/www/vendor
 
+COPY --from=composer /composer /usr/bin/composer
 RUN mkdir -p /var/www/public/uploads/
 
 # RUN chown -R www-data:www-data /var/www/
