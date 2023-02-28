@@ -8,7 +8,7 @@ FROM composer/composer:2-bin as composer
 #
 # Stage 2 - Prep App's PHP Dependencies
 #
-FROM php:8.0-fpm-alpine as phpserver
+FROM php:8.2-fpm-alpine as phpserver
 
 # add cli tools
 RUN apk update \

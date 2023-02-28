@@ -8,7 +8,7 @@ services:
       - ./:/var/www
     depends_on:
       - database
-    restart: unless-stopped
+    restart: always
     networks:
       - proxy
       - default
@@ -58,13 +58,6 @@ services:
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
   ###< doctrine/doctrine-bundle ###
-
-  ###> symfony/mailer ###
-  mailer:
-    image: schickling/mailcatcher
-    container_name: ${PROJECT_NAME:-project}-mailer
-    ports: [ 1025, 1080 ]
-###< symfony/mailer ###
 
 networks:
   proxy:
