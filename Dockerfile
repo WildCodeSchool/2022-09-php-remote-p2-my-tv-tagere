@@ -2,7 +2,6 @@
 # Stage 1 - Composer
 #
 FROM composer/composer:2-bin as composer
-
 # end Stage 1 #
 
 #
